@@ -15,7 +15,10 @@ class Game {
   void SelectSpinner();
   void hit();
   void Exit();
-  void Payout()
+  void Payout();
+
+  //Player player;
+  //Spinner* current_spinner;
 };
 
 #endif //PLACEBO_CLASS_HPP_INCLUDED
