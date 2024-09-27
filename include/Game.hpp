@@ -11,11 +11,11 @@ class Game {
   virtual ~Game();
 
   void Start();
-  void Stakes():
+  void Stakes();
   void SelectSpinner();
   void hit();
   void Exit();
-  void payout()
+  void Payout()
 };
 
 #endif //PLACEBO_CLASS_HPP_INCLUDED
