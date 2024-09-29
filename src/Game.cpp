@@ -15,14 +15,15 @@ Game::~Game() {}
   }
 
   void Stakes(){
-    if (bet < 25){
+    if (bet < 25){ // Change to Player.bet once implemented
         stakes = "LowStakes";
     }
-    else if (bet >= 25 && bet < 50){
+    else if (bet >= 25 && bet < 50){ // Change to Player.bet once implemented
         stakes = "MediumStakes";
     }
     else{
         stakes = "HighStakes";
+
     }
     
   }
