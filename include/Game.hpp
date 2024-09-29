@@ -21,4 +21,4 @@ class Game {
   //Spinner* current_spinner;
 };
 
-#endif //PLACEBO_CLASS_HPP_INCLUDED
+#endif 
