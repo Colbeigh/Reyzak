@@ -15,8 +15,16 @@ Game::~Game() {}
   }
 
   void Stakes(){
-
-
+    if (bet < 25){
+        stakes = "LowStakes";
+    }
+    else if (bet >= 25 && bet < 50){
+        stakes = "MediumStakes";
+    }
+    else{
+        stakes = "HighStakes";
+    }
+    
   }
 
   void SelectSpinner(){
@@ -63,3 +71,6 @@ Game::~Game() {}
 
 
     std::string spinner; // update to spinner class once implemented
+    std::string stakes;
+    int bet; // will be deleted
+
