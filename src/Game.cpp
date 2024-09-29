@@ -95,6 +95,6 @@ Game::~Game() {}
     std::string spinner; // update to spinner class once implemented
     std::string stakes;
     int bet; // will be deleted
-    int score = 0;
-    int current_score = 0;
+    int score = 0; // will be deleted
+    int current_score = 0; // will be deleted
 
