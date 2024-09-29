@@ -56,8 +56,29 @@ Game::~Game() {}
 
 
   void hit(){
+    char input2;
+    
+    std::cout<< "Your current score is: " << score << std::endl; // Update to player.score once implemented
+    
+    while(true){
+        std::cout << "Would you like to spin?  Y/N" << std::endl;
+        std::cin >> input2;
 
-
+        input2 = std::toupper(input2);
+        if (input2 == 'Y'){
+            int rndmnumber = spin(stakes, spinner);  // change to how we call spin
+            std::cout << "You spun " << rndmnumber << "!" << std::endl;
+            score += rndmnumber; // Update to player.score once implemented
+            std::cout << "Your new score is " << score << std::endl; // Update to player.score once implemented
+            break;
+        }
+        else if (input2 == 'N'){
+            break;
+        }
+        else{
+            std::cout<< "Invalid input" << std::endl;
+        }
+    }
   }
 
   void Exit(){
@@ -74,4 +95,6 @@ Game::~Game() {}
     std::string spinner; // update to spinner class once implemented
     std::string stakes;
     int bet; // will be deleted
+    int score = 0;
+    int current_score = 0;
 
