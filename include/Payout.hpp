@@ -3,7 +3,6 @@
  */
 
 #include <iostream>
-#include <string>
 
 #ifndef PAYOUT_HPP
 #define PAYOUT_HPP
