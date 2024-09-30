@@ -21,14 +21,13 @@ Game::~Game() {} // I believe unneccesary in this class to further implement jus
         player.PlaceBet();
         Stakes(bet);
         SelectSpinner();
-            bool loop2;
             while (player.bust() == false || gambling == true){
-                hit()
+                hit();
             }
             payout.Payout(); // calls payout function can change to whatever we decide to call it or we can implement into however we want
             current_score = 0; // Change to player.score or Player.CurrentScore or whatever we call it
     }
-    exit();
+    Exit();
   }
 
   void Stakes(int bet){
@@ -101,13 +100,19 @@ Game::~Game() {} // I believe unneccesary in this class to further implement jus
   }
 
   void Exit(){
-    cout << 
-    if (zephy > 0){
-        std::cout << ""
+    std::cout << "Thank's for playing!" << std::endl;
+    std::cout << "You left the table with " << zephy << " Zephy" << std::endl; // replace with Player.zephy
+
+    if (zephy <= 0){
+        std::cout << "Better luck next time" << std::endl;
     }
+    else if (zephy > 50){ // replace with Player.zephy
+        std::cout << "You made a " << zephy - 50 << " profit!" << std::endl; // replace with Player.zephy
+    }
+    playing = false;
   }
 
-  void Payout(){
+  void Payout(){ // We might not use so have not implemented
 
 
   }
@@ -120,5 +125,5 @@ Game::~Game() {} // I believe unneccesary in this class to further implement jus
     int current_score = 0; // will be deleted
     int zephy = 50; // will be deleted
 
-    bool playing = true;
-    bool gambling = true;
+    bool playing = true; // used for loop in Start()
+    bool gambling = true;// used for loop in Start()
