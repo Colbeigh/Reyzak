@@ -7,7 +7,6 @@
 class Player
 {
  public:
-  
   //Constructors
   Player();
 
