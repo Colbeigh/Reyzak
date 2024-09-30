@@ -1,20 +1,37 @@
-// Minimal source file for a placebo class that does nothing but allows the
-// pipeline to pass.
+/**
+ * Gamet.cpp created by Colby Hanna (Colby.Hanna@uleth.ca) on 2024-09-29
+ */
 
 #include "Game.hpp"
+
+#include "Player.hpp"
+#include "Spinner.hpp"
+#include "Player.hpp"
+#include "Payout.hpp"
 
 #include <iostream>
 #include <cctype>
 
-Game::Game() {}
+Game::Game() {} // I believe unneccesary in this class to further implement just going to use default
 
-Game::~Game() {}
+Game::~Game() {} // I believe unneccesary in this class to further implement just going to use default
 
   void Start(){
-    
+    while (zephy > 0 || playing == true){ // change to player.wallet.zephy
+        player.PlaceBet();
+        Stakes(bet);
+        SelectSpinner();
+            bool loop2;
+            while (player.bust() == false || gambling == true){
+                hit()
+            }
+            payout.Payout(); // calls payout function can change to whatever we decide to call it or we can implement into however we want
+            current_score = 0; // Change to player.score or Player.CurrentScore or whatever we call it
+    }
+    exit();
   }
 
-  void Stakes(){
+  void Stakes(int bet){
     if (bet < 25){ // Change to Player.bet once implemented
         stakes = "LowStakes";
     }
@@ -66,14 +83,16 @@ Game::~Game() {}
 
         input2 = std::toupper(input2);
         if (input2 == 'Y'){
-            int rndmnumber = spin(stakes, spinner);  // change to how we call spin
-            std::cout << "You spun " << rndmnumber << "!" << std::endl;
-            score += rndmnumber; // Update to player.score once implemented
+            int rndmnum = spin(stakes, spinner);  // change to how we call spin
+            std::cout << "You spun " << rndmnum << "!" << std::endl;
+
+            score += rndmnum; // Update to player.score once implemented
             std::cout << "Your new score is " << score << std::endl; // Update to player.score once implemented
             break;
         }
         else if (input2 == 'N'){
-            break;
+            gambling = false;
+            std::cout << "You decided not to spin" << std::endl;
         }
         else{
             std::cout<< "Invalid input" << std::endl;
@@ -82,8 +101,10 @@ Game::~Game() {}
   }
 
   void Exit(){
-
-
+    cout << 
+    if (zephy > 0){
+        std::cout << ""
+    }
   }
 
   void Payout(){
@@ -97,4 +118,7 @@ Game::~Game() {}
     int bet; // will be deleted
     int score = 0; // will be deleted
     int current_score = 0; // will be deleted
+    int zephy = 50; // will be deleted
 
+    bool playing = true;
+    bool gambling = true;
