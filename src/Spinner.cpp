@@ -1,8 +1,28 @@
-// Minimal source file for a placebo class that does nothing but allows the
-// pipeline to pass.
+#include "Spinner.hpp"
 
-#include "PlaceboClass.hpp"
+class Spinner {
+    public: 
+    
+    //constructor, initalizes range to 0
+    Spinner() {
+        min_Range = 0;
+        max_Range = 0;
+    }
 
-PlaceboClass::PlaceboClass() {}
+    virtual int spin() = 0;
 
-PlaceboClass::~PlaceboClass() {}
+    //sets range
+    void setRange(int minRange, int maxRange)
+    {
+        min_Range = minRange;
+        max_Range = maxRange;
+    }
+
+    private:
+    int min_Range, max_Range;
+
+};
+
+
+
+
