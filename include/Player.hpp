@@ -5,7 +5,9 @@
 #define PLAYER_HPP_INCLUDED
 
 class Player
+
 {
+  
  public:
   //Constructors
   Player();
