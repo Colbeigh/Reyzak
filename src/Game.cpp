@@ -94,14 +94,13 @@ Game::~Game() {} // I believe unneccesary in //this class to further implement j
 
     if (zephy <= 0) {
         std::cout << "Better luck next time" << std::endl;
-    } else if (zephy > 50){ // replace with Player.zephy
+    } else if (zephy > 50) { // replace with Player.zephy
         std::cout << "You made a " << zephy - 50 << " profit!" << std::endl; // replace with Player.zephy
     }
     playing = false;
   }
 
-  void Payout() { // We might not use so have not implemented
-
+  void Payout() {// We might not use so have not implemented
   }
 
 
