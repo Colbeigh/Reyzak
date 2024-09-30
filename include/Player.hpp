@@ -1,6 +1,7 @@
 //Player Class
 //Author: Jem
 
+#include "PWallet.hpp"
 #ifndef PLAYER_HPP_INCLUDED
 #define PLAYER_HPP_INCLUDED
 
@@ -12,18 +13,20 @@ class Player
   //Constructors
   Player();
 
-  Player(int pScore, int currentScore);
+  Player(int Pscore, int currentBet, PWallet Wallet);
 
   //Deconstructors
   ~Player();
 
-  void Placebet(int amount);
-
-  void UpdateScore(int spinResult);
+  
+  void Placebet(double currentBet);
 
   bool Bust();
 
+private:
 
+const static_cast <double>(currentBet);
+const targetScore = 17;
 
   };
 
