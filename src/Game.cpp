@@ -104,27 +104,8 @@ Game::~Game() {} // I believe unneccesary in //this class to further implement j
     std::string spinner; // update to spinner class once implemented
     enum stakes{low, medium, high};
     int bet; // will be deleted
-Enum stakes{low, medium.high}
-spinner* = current spinner
-
-
-spinner = blala 
-stakes = 2
-number = spinner.stakes()
-cout << number<< endl;
-
-spinner = blala 
-stakes = 1
-number = spinner.stakes()
-cout << number<< endl;
-
-spinner = blala 3
-stakes = 0
-number = spinner.stakes()
-cout << number<< endl;
-
-spinner = blala 2
-stakes = 1
-number = spinner.stakes()
-cout << number<< endl;
-    int current score, int bet, player.wallet
+    int score = 0; // will be deleted
+    int current_score = 0; // will be deleted
+    int zephy = 50; // will be deleted
+    bool playing = true; // used for loop in Start()
+    bool gambling = true;// used for loop in Start()
