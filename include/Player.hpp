@@ -1,14 +1,29 @@
-// Minimal source file for a placebo class that does nothing but allows the
-// pipeline to pass.
+//Player Class
+//Author: Jem
 
 #ifndef PLAYER_HPP_INCLUDED
 #define PLAYER_HPP_INCLUDED
 
-class Player {
+class Player
+{
  public:
   
+  //Constructors
   Player();
-  virtual ~PlaceboClass();
-};
+
+  Player(int pScore, int currentScore);
+
+  //Deconstructors
+  ~Player();
+
+  void Placebet(int amount);
+
+  void UpdateScore(int spinResult);
+
+  bool Bust();
+
+
+
+  };
 
 #endif //PLAYER_HPP_INCLUDED
