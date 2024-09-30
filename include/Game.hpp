@@ -7,7 +7,6 @@
 
 #include "Player.hpp"
 #include "Spinner.hpp"
-#include "Player.hpp"
 #include "Payout.hpp"
 
 class Game {
@@ -27,4 +26,4 @@ class Game {
   Spinner* current_spinner;
 };
 
-#endif 
+#endif
