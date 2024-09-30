@@ -6,7 +6,6 @@
 
 #include "Player.hpp"
 #include "Spinner.hpp"
-
 #include "Payout.hpp"
 
 #include <iostream>
@@ -18,7 +17,7 @@ Game::~Game() {} // I believe unneccesary in //this class to further implement j
   void Start() {
     while (zephy > 0 || playing == true) { // change to player.wallet.zephy
         player.PlaceBet();
-        Stakes(bet);
+        Stakes(bet); // change to player.bet
         SelectSpinner();
             while (player.bust() == false || gambling == true) {
                 hit();
@@ -31,13 +30,14 @@ Game::~Game() {} // I believe unneccesary in //this class to further implement j
 
   void Stakes(int bet) {
     if (bet < 25) { // Change to Player.bet once implemented
-        stakes = "LowStakes";
+        stakes = 0;
     } else if (bet >= 25 && bet < 50) { // Change to Player.bet once implemented
-        stakes = "MediumStakes";
+        stakes = 1;
     } else {
-        stakes = "HighStakes";
+        stakes = 2;
     }
   }
+
 
   void SelectSpinner() {
     char input;
@@ -73,18 +73,15 @@ Game::~Game() {} // I believe unneccesary in //this class to further implement j
 
         input2 = std::toupper(input2);
         if (input2 == 'Y') {
-            int rndmnum = spin(stakes, spinner);  // change to how we call spin
+            int rndmnum = Spinner.spin(stakes);  // change to how we call spin
             std::cout << "You spun " << rndmnum << "!" << std::endl;
 
-            score += rndmnum; // Update to player.score once implemented
+            player.score += rndmnum; // Update to player.score once implemented
             std::cout << "Your new score is " << score << std::endl; // Update to player.score once implemented
             break;
         } else if (input2 == 'N') {
-            gambling = false;
-            std::cout << "You decided not to spin" << std::endl;
-        } else {
-            std::cout<< "Invalid input" << std::endl;
-        }
+            gambling = false; 
+    }
     }
   }
 
@@ -94,7 +91,7 @@ Game::~Game() {} // I believe unneccesary in //this class to further implement j
 
     if (zephy <= 0) {
         std::cout << "Better luck next time" << std::endl;
-    } else if (zephy > 50) { // replace with Player.zephy
+    } else if Low(zephy > 50) { // replace with Player.zephy
         std::cout << "You made a " << zephy - 50 << " profit!" << std::endl; // replace with Player.zephy
     }
     playing = false;
@@ -105,10 +102,29 @@ Game::~Game() {} // I believe unneccesary in //this class to further implement j
 
 
     std::string spinner; // update to spinner class once implemented
-    std::string stakes;
+    enum stakes{low, medium, high};
     int bet; // will be deleted
-    int score = 0; // will be deleted
-    int current_score = 0; // will be deleted
-    int zephy = 50; // will be deleted
-    bool playing = true; // used for loop in Start()
-    bool gambling = true;// used for loop in Start()
+Enum stakes{low, medium.high}
+spinner* = current spinner
+
+
+spinner = blala 
+stakes = 2
+number = spinner.stakes()
+cout << number<< endl;
+
+spinner = blala 
+stakes = 1
+number = spinner.stakes()
+cout << number<< endl;
+
+spinner = blala 3
+stakes = 0
+number = spinner.stakes()
+cout << number<< endl;
+
+spinner = blala 2
+stakes = 1
+number = spinner.stakes()
+cout << number<< endl;
+    int current score, int bet, player.wallet
