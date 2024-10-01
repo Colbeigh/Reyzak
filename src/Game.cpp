@@ -22,7 +22,7 @@ Game::~Game() {} // I believe unneccesary in //this class to further implement j
             while (player.bust() == false || gambling == true) {
                 hit();
             }
-            payout.Payout(); // calls payout function can change to whatever we decide to call it or we can implement into however we want
+            payout.Payout(player.pscore, player.bet, player.wallet.zephy); // calls payout function can change to whatever we decide to call it or we can implement into however we want
             current_score = 0; // Change to player.score or Player.CurrentScore or whatever we call it
     }
     Exit();
@@ -109,3 +109,4 @@ Game::~Game() {} // I believe unneccesary in //this class to further implement j
     int zephy = 50; // will be deleted
     bool playing = true; // used for loop in Start()
     bool gambling = true;// used for loop in Start()
+    
