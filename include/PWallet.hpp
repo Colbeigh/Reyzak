@@ -1,13 +1,23 @@
 // Minimal source file for a placebo class that does nothing but allows the
 // pipeline to pass.
 
-#ifndef PLACEBO_CLASS_H_INCLUDED
-#define PLACEBO_CLASS_H_INCLUDED
+#ifndef PWALLET_HPP_INCLUDED
+#define PWALLET_HPP_INCLUDED
 
-class PlaceboClass {
+class PWallet {
  public:
-  PlaceboClass();
-  virtual ~PlaceboClass();
+
+PWallet();
+PWallet(double initialZephy);
+double checkBalance();
+void removeZephy(double amount);
+void addZephy(double amount);
+
+
+private:
+
+double zephy;
+
 };
 
-#endif //PLACEBO_CLASS_H_INCLUDED
+#endif //PWALLET_HPP_INCLUDED

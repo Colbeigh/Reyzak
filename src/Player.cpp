@@ -24,7 +24,7 @@ currentBet = 0;
 }
 
 //Parameters, interger amount for bet
-Player:: placeBet(double currentBet){
+void Player:: placeBet(double currentBet){
 /**
  * Steps:
  * Make static cast for amount
@@ -52,7 +52,7 @@ Wallet.removeZephy(amount);
 }
 }
 
-Player::Bust(){
+bool Player::Bust(){
 
-    
+
 }
