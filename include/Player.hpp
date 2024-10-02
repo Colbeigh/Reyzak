@@ -19,14 +19,15 @@ class Player
   ~Player();
 
   
-  void Placebet(double currentBet);
+  void placeBet(double currentBet);
 
   bool Bust();
 
 private:
 
+PWallet wallet;
 const static_cast <double>(currentBet);
-const targetScore = 17;
+const int targetScore = 17;
 
   };
 
