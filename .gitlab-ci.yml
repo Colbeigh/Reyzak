@@ -49,3 +49,11 @@ memoryLeaks:
    stage: active_tests
    script:
       - make memcheck
+
+coverage:
+   stage: active_tests
+   script:
+      - make coverage
+   artifacts:
+     paths:
+        - coverage

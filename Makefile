@@ -74,7 +74,9 @@ clean-temp:
 	${SRC_INCLUDE}/*~ ${SRC_INCLUDE}/\#* ${SRC_INCLUDE}/.\#* \
 	${PROJECT_SRC_DIR}/*~ ${PROJECT_SRC_DIR}/\#* ${PROJECT_SRC_DIR}/.\#* \
 	${DESIGN_DIR}/*~ ${DESIGN_DIR}/\#* ${DESIGN_DIR}/.\#* \
-	*.gcov *.gcda *.gcno 
+	*.gcov *.gcda *.gcno \
+	*.orig ${SRC_DIR}/*.orig ${GTEST_DIR}/*.orig {$SRC_INCLUDE}/*.orig \
+	${PROJECT_SRC_DIR}/*.orig ${DESIGN_DIR}/*.orig
 
 .PHONY: clean
 clean: clean-cov clean-docs clean-exec clean-obj clean-temp
