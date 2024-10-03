@@ -1,27 +1,24 @@
+/**
+ * @author Todd Across The Mountain [t.acrossthemountain@uleth.ca]
+ * @date 2024-10
+ */
+
 #include "Spinner.hpp"
 
-class Spinner {
-    public: 
-    
-    //constructor, initalizes range to 0
-    Spinner() {
-        min_Range = 0;
-        max_Range = 0;
+ Spinner::Spinner() {
+    min_Range = 0;
+    max_Range = 0;
     }
 
-    virtual int spin() = 0;
-
-    //sets range
-    void setRange(int minRange, int maxRange)
-    {
-        min_Range = minRange;
-        max_Range = maxRange;
+int Spinner::spin() {
+        return 0;
     }
 
-    private:
-    int min_Range, max_Range;
+void Spinner::setRange(int minRange, int maxRange) {
+    min_Range = minRange;
+    max_Range = maxRange;
+}
 
-};
 
 
 
