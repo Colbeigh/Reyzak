@@ -26,7 +26,7 @@ class Spinner {
     * @param minRange int value for lower part of range
     * @param maxRange int value for higher part of range
     */
-   void setRange(int minRange, int maxRange);
+  void setRange(int minRange, int maxRange);
 
  private:
   int min_Range, max_Range;
