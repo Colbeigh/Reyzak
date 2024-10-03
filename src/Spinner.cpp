@@ -5,7 +5,7 @@
 
 #include "Spinner.hpp"
 
- Spinner::Spinner() {
+Spinner::Spinner() {
     min_Range = 0;
     max_Range = 0;
     }

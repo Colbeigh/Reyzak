@@ -3,6 +3,6 @@
 
 
 int FiveSpinner::spin() {
-   std::cout << "0 to 5 spinner spun" << std::endl;
-   return 0;
+  std::cout << "0 to 5 spinner spun" << std::endl;
+  return 0;
 }
