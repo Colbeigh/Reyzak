@@ -9,7 +9,7 @@
 /**
  * @brief a base class for Spinner Objects
  */
-class Spinner {      
+class Spinner {
  public:
     /**
      * @brief Constructor, sets min and max range to 0
