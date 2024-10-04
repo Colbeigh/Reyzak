@@ -15,12 +15,12 @@ const static_cast from int to double
 #include <iostream>
 #include "PWallet.hpp"
 #include "Player.hpp"
+#include "Payout.hpp"
 
 //Parameters, Player 
 Player::Player(int &pScore, double &pBet, PWallet Wallet){
 pScore = 0;
 pBet = 0;
-PWallet Wallet;
 *currentScore = pScore;
 *currentBet = pBet; 
 
@@ -60,6 +60,9 @@ Wallet.removeZephy(amount);
 }
 
 bool Player::Bust(){
-
+if(currentScore <= 11 || currentScore > 17){
+return true;
+}
+else return false;
 
 }
