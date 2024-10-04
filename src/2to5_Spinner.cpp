@@ -5,9 +5,10 @@
 
 #include "2to5_Spinner.hpp"
 #include <iostream>
+#include <string>
 
 
-int FiveSpinner::spin() {
+int FiveSpinner::spin(std::string Stakes) {
   std::cout << "2 to 5 spinner spun" << std::endl;
   return 0;
 }

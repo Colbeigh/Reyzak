@@ -19,7 +19,7 @@ class Spinner {
    /**
      * @brief this method should be overridden in enherited classes, currently returns 0
      */
-  virtual int spin();
+  virtual int spin(std::string Stakes);
 
    /**
     * @brief sets our range

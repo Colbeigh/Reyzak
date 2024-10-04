@@ -4,13 +4,14 @@
  */
 
 #include "Spinner.hpp"
+#include <string>
 
 Spinner::Spinner() {
     min_Range = 0;
     max_Range = 0;
     }
 
-int Spinner::spin() {
+int Spinner::spin(std::string Stakes) {
         return 0;
     }
 
