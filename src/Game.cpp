@@ -6,7 +6,6 @@
 
 #include "Player.hpp"
 #include "Spinner.hpp"
-#include "Payout.hpp"
 
 #include <iostream>
 #include <cctype>
@@ -16,25 +15,24 @@ Game::~Game() {} // I believe unneccesary in //this class to further implement j
 
   void Start() {
     while (zephy > 0 || playing == true) { // change to player.wallet.zephy
-        player.PlaceBet();
+        Player.PlaceBet();
         Stakes(bet); // change to player.bet
         SelectSpinner();
             while (player.bust() == false || gambling == true) {
                 hit();
             }
-            payout.Payout(player.pscore, player.bet, player.wallet.zephy); // calls payout function can change to whatever we decide to call it or we can implement into however we want
-            current_score = 0; // Change to player.score or Player.CurrentScore or whatever we call it
+            Player.Payout();
     }
     Exit();
   }
 
   void Stakes(int bet) {
     if (bet < 25) { // Change to Player.bet once implemented
-        stakes = 0;
+        stakes = "Low";
     } else if (bet >= 25 && bet < 50) { // Change to Player.bet once implemented
-        stakes = 1;
+        stakes = "Medium";
     } else {
-        stakes = 2;
+        stakes = "High";
     }
   }
 
@@ -49,11 +47,11 @@ Game::~Game() {} // I believe unneccesary in //this class to further implement j
         input = std::toupper(input);
 
         if (input == 'A') {
-            spinner = "2 to 5"; // update to spinner class once implemented
+            spinner = new FiveSpinner(); // update to spinner class once implemented
             std::cout << "You have selected the 2 to 5 spinner!" << std::endl;
             break;
         } else if (input == 'B') {
-            spinner ="0 to 7"; // update to spinner class once implemented
+            spinner = new SevenSpinner(); // update to spinner class once implemented
             std::cout << "You have selected the 0 to 7 spinner!" << std::endl;
             break;
         } else {
@@ -87,22 +85,22 @@ Game::~Game() {} // I believe unneccesary in //this class to further implement j
 
   void Exit() {
     std::cout << "Thank's for playing!" << std::endl;
-    std::cout << "You left the table with " << zephy << " Zephy" << std::endl; // replace with Player.zephy
+    std::cout << "You left the table with " << Player.GetBalance() << " Zephy" << std::endl; // replace with Player.zephy
 
-    if (zephy <= 0) {
+    if (Player.GetBalance() <= 0) {
         std::cout << "Better luck next time" << std::endl;
-    } else if Low(zephy > 50) { // replace with Player.zephy
-        std::cout << "You made a " << zephy - 50 << " profit!" << std::endl; // replace with Player.zephy
+    } else if (Player.GetBalance() > 50) { // replace with Player.zephy
+        std::cout << "You made a " << Player.GetBalance() - 50 << " profit!" << std::endl; // replace with Player.zephy
     }
     playing = false;
   }
 
-  void Payout() {// We might not use so have not implemented
-  }
 
 
-    std::string spinner; // update to spinner class once implemented
-    enum stakes{low, medium, high};
+    Spinner* spinner; // update to spinner class once implemented
+    std::string stakes;
+
+
     int bet; // will be deleted
     int score = 0; // will be deleted
     int current_score = 0; // will be deleted
