@@ -17,28 +17,34 @@ const static_cast from int to double
 #include "Player.hpp"
 
 //Parameters, Player 
-Player::Player(int Pscore, int currentBet, PWallet Wallet){
-Pscore = 0;
-currentBet = 0;
+Player::Player(int &pScore, double &pBet, PWallet Wallet){
+pScore = 0;
+pBet = 0;
+*currentScore = pScore;
+*currentBet = pBet; 
 
+}
+/**
+ *
+ *
+ */
+int Player::getScore(){
+    if(*currentScore <= 0){
+        std::cout << "Player currently has no scores" << endl;
+    }
+    else{
+    return *currentScore;
+}
+return *currentScore;
 }
 
 //Parameters, interger amount for bet
-void Player:: placeBet(double currentBet){
-/**
- * Steps:
- * Make static cast for amount
- * take money from amount place it on currentbet
- * check if they have enough
- * if not then warn
- * if 0 (??)
- * if there's money, check wallet then take from wallet
- * 
-*/
-double amount=  static_cast<double>(currentBet);
+void Player:: placeBet(double amount){
+
+*currentBet =  static_cast<double>(amount);
 std::cout << "Place your bet:";
 std::cin >> amount;
-if(amount <= 0){
+if(Bet <= 0){
  cout << "???" << endl;
 }
 else if(amount > Wallet.checkBalance()){
@@ -46,7 +52,7 @@ else if(amount > Wallet.checkBalance()){
 }
 else 
 {
-currentBet = amount;
+*currentBet = amount;
 cout << "You've placed: $" << currentBet << "to bet!" << endl;
 Wallet.removeZephy(amount);
 }

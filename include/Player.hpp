@@ -13,7 +13,7 @@ class Player
   //Constructors
   Player();
 
-  Player(int Pscore, int currentBet, PWallet Wallet);
+  Player(int &pScore, double &pBet, PWallet Wallet);
 
   //Deconstructors
   ~Player();
@@ -23,11 +23,12 @@ class Player
 
   bool Bust();
 
+  int getScore();
+
 private:
 
-PWallet wallet;
-const static_cast <double>(currentBet);
-const int targetScore = 17;
+int* currentScore;
+int* currentBet;
 
   };
 

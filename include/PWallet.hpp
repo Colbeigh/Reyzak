@@ -8,7 +8,7 @@ class PWallet {
  public:
 
 PWallet();
-PWallet(double initialZephy);
+PWallet(double &zephy);
 double checkBalance();
 void removeZephy(double amount);
 void addZephy(double amount);
@@ -16,7 +16,7 @@ void addZephy(double amount);
 
 private:
 
-double zephy;
+double* currentZephy;
 
 };
 
