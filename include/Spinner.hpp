@@ -16,10 +16,10 @@ class Spinner {
      */
   Spinner();
 
-    /**
+   /**
      * @brief this method should be overridden in enherited classes, currently returns 0
      */
-        int spin();
+  virtual int spin();
 
    /**
     * @brief sets our range
