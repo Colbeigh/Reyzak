@@ -60,7 +60,7 @@ Wallet.removeZephy(amount);
 }
 
 bool Player::Bust(){
-if(currentScore <= 11 || currentScore > 17){
+if(*currentScore <= 11 || *currentScore > 17){
 return true;
 }
 else return false;
