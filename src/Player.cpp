@@ -41,7 +41,8 @@ return *currentScore;
 
 //Parameters, interger amount for bet
 void Player:: placeBet(double amount){
-
+amount = 0;
+*currentScore = 0;
 *currentBet =  static_cast<double>(amount);
 std::cout << "Place your bet:";
 std::cin >> amount;
