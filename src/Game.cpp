@@ -110,3 +110,5 @@ Game::~Game() {} // I believe unneccesary in //this class to further implement j
     bool playing = true; // used for loop in Start()
     bool gambling = true;// used for loop in Start()
     
+
+ 

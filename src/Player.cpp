@@ -20,6 +20,7 @@ const static_cast from int to double
 Player::Player(int &pScore, double &pBet, PWallet Wallet){
 pScore = 0;
 pBet = 0;
+PWallet Wallet;
 *currentScore = pScore;
 *currentBet = pBet; 
 
@@ -30,7 +31,7 @@ pBet = 0;
  */
 int Player::getScore(){
     if(*currentScore <= 0){
-        std::cout << "Player currently has no scores" << endl;
+        std::cout << "Player currently has no scores" << std::endl;
     }
     else{
     return *currentScore;
@@ -44,16 +45,16 @@ void Player:: placeBet(double amount){
 *currentBet =  static_cast<double>(amount);
 std::cout << "Place your bet:";
 std::cin >> amount;
-if(Bet <= 0){
- cout << "???" << endl;
+if(amount <= 0){
+ std::cout << "???" << std::endl;
 }
 else if(amount > Wallet.checkBalance()){
-    cout << "Insufficient Funds" << endl;
+    std::cout << "Insufficient Funds" << std::endl;
 }
 else 
 {
 *currentBet = amount;
-cout << "You've placed: $" << currentBet << "to bet!" << endl;
+std::cout << "You've placed: $" << currentBet << "to bet!" << std::endl;
 Wallet.removeZephy(amount);
 }
 }
