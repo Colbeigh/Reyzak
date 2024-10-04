@@ -1,6 +1,7 @@
 //Player Class
 //Author: Jem
 
+#include "Payout.hpp"
 #include "PWallet.hpp"
 #ifndef PLAYER_HPP_INCLUDED
 #define PLAYER_HPP_INCLUDED
@@ -19,14 +20,14 @@ class Player
   ~Player();
 
   
-  void placeBet(double currentBet);
+  void placeBet(double amount);
 
   bool Bust();
 
   int getScore();
 
 private:
-
+PWallet Wallet;
 int* currentScore;
 int* currentBet;
 
