@@ -18,9 +18,8 @@ class Game {
   void Start();
   void Stakes();
   void SelectSpinner();
-  void hit();
+  void Hit();
   void Exit();
-  void Payout();
 
   Player player;
   Spinner* current_spinner;
