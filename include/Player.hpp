@@ -14,22 +14,22 @@ class Player
   //Constructors
   Player();
 
-  Player(int &pScore, double &pBet, PWallet Wallet);
-
   //Deconstructors
   ~Player();
 
   
-  void placeBet(double amount);
+  void placeBet();
 
   bool Bust();
 
-  int getScore();
+  double getBalance();
+
+  int currentscore = 0;
+  double currentbet = 0.0;
 
 private:
+
 PWallet Wallet;
-int* currentScore;
-int* currentBet;
 
   };
 
