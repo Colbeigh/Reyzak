@@ -67,7 +67,7 @@ void Game::SelectSpinner() {
             break;
         } else if (input == '3') {
             Rules();
-        }else {
+        } else {
             std::cout<< "That is an invalid input. Please try Again" << std::endl;
         }
     }
@@ -112,8 +112,8 @@ void Exit() {
     playing = false;
   }
 
- void Rules() {
-    std::ifstream inputFile("Rules.txt"); // Make sure this file exists
+void Rules() {
+    std::ifstream inputFile("Rules.txt");
 
     if (!inputFile) {
         std::cerr << "Invalid File" << std::endl;
@@ -134,4 +134,4 @@ void Exit() {
     std::string stakes;
     bool playing = true; // used for loop in Start()
     bool gambling = true;// used for loop in Start()
-    
+  
