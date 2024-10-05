@@ -45,28 +45,28 @@ void Game::Stakes(int bet) {
 
 
 void Game::SelectSpinner() {
-    char input;
+    int input;
 
     while (true) {
-        std::cout << "Please Select a Spinner" << std::endl << "A - 2 to 5 Spinner" << std::endl << "B - 0 to 7 Spinner" << std::endl;
+        std::cout << "Please Select a Spinner" << std::endl << "1 - 2 to 5 Spinner" << std::endl << "2 - 0 to 7 Spinner" << std::endl << "3 - Display Rules" << std::endl;
         std::cin >> input;
-
-        input = std::toupper(input);
 
         if (spinner != nullptr) {
             delete spinner;
             spinner = nullptr;
         }
 
-        if (input == 'A') {
+        if (input == '1') {
             spinner = new FiveSpinner();
             std::cout << "You have selected the 2 to 5 spinner!" << std::endl;
             break;
-        } else if (input == 'B') {
+        } else if (input == '2') {
             spinner = new SevenSpinner();
             std::cout << "You have selected the 0 to 7 spinner!" << std::endl;
             break;
-        } else {
+        } else if (input == '3') {
+            Rules();
+        }else {
             std::cout<< "That is an invalid input. Please try Again" << std::endl;
         }
     }
@@ -78,20 +78,25 @@ void Game::Hit() {
     std::cout<< "Your current score is: " << player.pscore << std::endl;
 
     while (true) {
-        std::cout << "Would you like to spin?  Y/N Types" << std::endl;
+        std::cout << "Would you like to spin?" << std::endl << "1 - Yes" << std::endl << "2 - No" << std::endl << "3 - Display Rules" << std::endl;
+    
         std::cin >> input2;
 
         input2 = std::toupper(input2);
-        if (input2 == 'Y') {
+        if (input2 == '1') {
             int rndmnum = spinner->spin(stakes);
             std::cout << "You spun " << rndmnum << "!" << std::endl;
 
             player.pscore += rndmnum;
             std::cout << "Your new score is " << player.pscore << std::endl;
             break;
-        } else if (input2 == 'N') {
+        } else if (input2 == '2') {
+            std::cout << "You decided not to spin" << std::endl;
             gambling = false; 
-    }
+            break;
+        } else if (input2 == '3') {
+            Rules();
+        }
     }
   }
 
