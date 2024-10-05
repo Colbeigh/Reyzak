@@ -13,20 +13,20 @@
 Game::Game() {} // I believe unneccesary in //this class to further implement just going to use default
 Game::~Game() {} // I believe unneccesary in //this class to further implement just going to use default
 
-  void Start() {
-    while (zephy > 0 || playing == true) { // change to player.wallet.zephy
-        Player.PlaceBet();
-        Stakes(bet); // change to player.bet
+  void Game::Start() {
+    while (player.getScore() > 0 || playing == true) { // change to player.wallet.zephy
+        player.placeBet();
+        Stakes(player.pbet); // change to player.bet
         SelectSpinner();
-            while (player.bust() == false || gambling == true) {
+            while (player.Bust() == false || gambling == true) {
                 hit();
             }
-            Player.Payout();
+            player.Payout();
     }
     Exit();
   }
 
-  void Stakes(int bet) {
+  void Game::Stakes(int bet) {
     if (bet < 25) { // Change to Player.bet once implemented
         stakes = "Low";
     } else if (bet >= 25 && bet < 50) { // Change to Player.bet once implemented
@@ -37,7 +37,7 @@ Game::~Game() {} // I believe unneccesary in //this class to further implement j
   }
 
 
-  void SelectSpinner() {
+  void Game::SelectSpinner() {
     char input;
 
     while (true) {
@@ -47,11 +47,11 @@ Game::~Game() {} // I believe unneccesary in //this class to further implement j
         input = std::toupper(input);
 
         if (input == 'A') {
-            spinner = new FiveSpinner(); // update to spinner class once implemented
+            spinner = new FiveSpinner();
             std::cout << "You have selected the 2 to 5 spinner!" << std::endl;
             break;
         } else if (input == 'B') {
-            spinner = new SevenSpinner(); // update to spinner class once implemented
+            spinner = new SevenSpinner();
             std::cout << "You have selected the 0 to 7 spinner!" << std::endl;
             break;
         } else {
@@ -60,10 +60,10 @@ Game::~Game() {} // I believe unneccesary in //this class to further implement j
     }
   }
 
-  void hit() {
+  void Game::hit() {
     char input2;
 
-    std::cout<< "Your current score is: " << score << std::endl; // Update to player.score once implemented
+    std::cout<< "Your current score is: " << player.score << std::endl;
 
     while (true) {
         std::cout << "Would you like to spin?  Y/N" << std::endl;
@@ -71,11 +71,11 @@ Game::~Game() {} // I believe unneccesary in //this class to further implement j
 
         input2 = std::toupper(input2);
         if (input2 == 'Y') {
-            int rndmnum = Spinner.spin(stakes);  // change to how we call spin
+            int rndmnum = Spinner.spin(stakes);
             std::cout << "You spun " << rndmnum << "!" << std::endl;
 
-            player.score += rndmnum; // Update to player.score once implemented
-            std::cout << "Your new score is " << score << std::endl; // Update to player.score once implemented
+            player.currentScore += rndmnum;
+            std::cout << "Your new score is " << player.score << std::endl;
             break;
         } else if (input2 == 'N') {
             gambling = false; 
@@ -83,28 +83,22 @@ Game::~Game() {} // I believe unneccesary in //this class to further implement j
     }
   }
 
-  void Exit() {
+  void Game::Exit() {
     std::cout << "Thank's for playing!" << std::endl;
-    std::cout << "You left the table with " << Player.GetBalance() << " Zephy" << std::endl; // replace with Player.zephy
+    std::cout << "You left the table with " << player.GetBalance() << " Zephy" << std::endl;
 
-    if (Player.GetBalance() <= 0) {
+    if (player.GetBalance() <= 0) {
         std::cout << "Better luck next time" << std::endl;
-    } else if (Player.GetBalance() > 50) { // replace with Player.zephy
-        std::cout << "You made a " << Player.GetBalance() - 50 << " profit!" << std::endl; // replace with Player.zephy
+    } else if (player.GetBalance() > 50) {
+        std::cout << "You made a " << player.GetBalance() - 50 << " profit!" << std::endl;
     }
     playing = false;
   }
 
 
-
+    Player player(0, 0, 50)
     Spinner* spinner; // update to spinner class once implemented
     std::string stakes;
-
-
-    int bet; // will be deleted
-    int score = 0; // will be deleted
-    int current_score = 0; // will be deleted
-    int zephy = 50; // will be deleted
     bool playing = true; // used for loop in Start()
     bool gambling = true;// used for loop in Start()
     
