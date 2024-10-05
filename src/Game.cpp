@@ -79,7 +79,7 @@ void Game::Hit() {
     while (true) {
         std::cout << "Would you like to spin?\n";
         std::cout << "1 - Yes\n2 - No\n3 - Display Rules\n";
- 
+
         std::cin >> input2;
 
         input2 = std::toupper(input2);
