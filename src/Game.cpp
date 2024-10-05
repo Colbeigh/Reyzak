@@ -6,32 +6,37 @@
 
 #include "Player.hpp"
 #include "Spinner.hpp"
+#include "2to5_Spinner.hpp"
+#include "0to7_Spinner.hpp"
 
 #include <iostream>
 #include <cctype>
+#include <string>
+#include <fstream> 
 
 Game::Game() {}
 Game::~Game() {
     delete spinner;
 }
 
-  void Game::Start() {
+void Game::Start() {
+    Rules();
     while (player.getScore() > 0 && playing == true) {
         player.placeBet();
         Stakes(player.pbet); // change to player.bet
         SelectSpinner();
             while (player.Bust() == false || gambling == true) {
-                hit();
+                Hit();
             }
             player.Payout();
     }
     Exit();
   }
 
-  void Game::Stakes(int bet) {
-    if (bet < 25) { // Change to Player.bet once implemented
+void Game::Stakes(int bet) {
+    if (bet < 25) {
         stakes = "Low";
-    } else if (bet >= 25 && bet < 50) { // Change to Player.bet once implemented
+    } else if (bet >= 25 && bet < 50) {
         stakes = "Medium";
     } else {
         stakes = "High";
@@ -39,7 +44,7 @@ Game::~Game() {
   }
 
 
-  void Game::SelectSpinner() {
+void Game::SelectSpinner() {
     char input;
 
     while (true) {
@@ -67,22 +72,22 @@ Game::~Game() {
     }
   }
 
-  void Game::hit() {
+void Game::Hit() {
     char input2;
 
-    std::cout<< "Your current score is: " << player.score << std::endl;
+    std::cout<< "Your current score is: " << player.pscore << std::endl;
 
     while (true) {
-        std::cout << "Would you like to spin?  Y/N" << std::endl;
+        std::cout << "Would you like to spin?  Y/N Types" << std::endl;
         std::cin >> input2;
 
         input2 = std::toupper(input2);
         if (input2 == 'Y') {
-            int rndmnum = spinner.spin(stakes);
+            int rndmnum = spinner->spin(stakes);
             std::cout << "You spun " << rndmnum << "!" << std::endl;
 
-            player.currentScore += rndmnum;
-            std::cout << "Your new score is " << player.score << std::endl;
+            player.pscore += rndmnum;
+            std::cout << "Your new score is " << player.pscore << std::endl;
             break;
         } else if (input2 == 'N') {
             gambling = false; 
@@ -90,7 +95,7 @@ Game::~Game() {
     }
   }
 
-  void Exit() {
+void Exit() {
     std::cout << "Thank's for playing!" << std::endl;
     std::cout << "You left the table with " << player.GetBalance() << " Zephy" << std::endl;
 
@@ -102,7 +107,26 @@ Game::~Game() {
     playing = false;
   }
 
+ void Rules() {
+    std::ifstream inputFile("Rules.txt"); // Make sure this file exists
 
+    if (!inputFile) {
+        std::cerr << "Invalid File" << std::endl;
+        return;
+    }
+
+    std::string line;
+
+    while (std::getline(inputFile, line)) {
+        std::cout << line << std::endl;
+    }
+
+    inputFile.close();
+}
+    
+    
+    
+    
     Player player;
     Spinner* spinner = nullptr;
     std::string stakes;
