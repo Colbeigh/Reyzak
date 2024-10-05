@@ -12,7 +12,7 @@
 #include <iostream>
 #include <cctype>
 #include <string>
-#include <fstream> 
+#include <fstream>
 
 Game::Game() {}
 Game::~Game() {
@@ -48,7 +48,8 @@ void Game::SelectSpinner() {
     int input;
 
     while (true) {
-        std::cout << "Please Select a Spinner" << std::endl << "1 - 2 to 5 Spinner" << std::endl << "2 - 0 to 7 Spinner" << std::endl << "3 - Display Rules" << std::endl;
+        std::cout << "Please Select a Spinner" << std::endl << "1 - 2 to 5 Spinner" << std::endl;
+        std::cout <<  "2 - 0 to 7 Spinner" << std::endl << "3 - Display Rules" << std::endl;
         std::cin >> input;
 
         if (spinner != nullptr) {
@@ -86,13 +87,12 @@ void Game::Hit() {
         if (input2 == '1') {
             int rndmnum = spinner->spin(stakes);
             std::cout << "You spun " << rndmnum << "!" << std::endl;
-
             player.pscore += rndmnum;
             std::cout << "Your new score is " << player.pscore << std::endl;
             break;
         } else if (input2 == '2') {
             std::cout << "You decided not to spin" << std::endl;
-            gambling = false; 
+            gambling = false;
             break;
         } else if (input2 == '3') {
             Rules();
@@ -128,9 +128,6 @@ void Exit() {
 
     inputFile.close();
 }
-    
-    
-    
     
     Player player;
     Spinner* spinner = nullptr;
