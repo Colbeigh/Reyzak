@@ -5,9 +5,8 @@ Dates:
  */
 /**
 want:
-target in bool and player
-current bet public
-const static_cast from int to double
+To use payout class to calculate
+getBalance function
 
 
  */
@@ -17,53 +16,63 @@ const static_cast from int to double
 #include "Player.hpp"
 #include "Payout.hpp"
 
-//Parameters, Player 
-Player::Player(int &pScore, double &pBet, PWallet Wallet){
-pScore = 0;
-pBet = 0;
-*currentScore = pScore;
-*currentBet = pBet; 
-
-}
-/**
- *
- *
- */
-int Player::getScore(){
-    if(*currentScore <= 0){
-        std::cout << "Player currently has no scores" << std::endl;
-    }
-    else{
-    return *currentScore;
-}
-return *currentScore;
+//Parameters: 
+Player::Player(){
 }
 
-//Parameters, interger amount for bet
-void Player:: placeBet(double amount){
-amount = 0;
-*currentScore = 0;
-*currentBet =  static_cast<double>(amount);
+//Parameters, 
+void Player:: placeBet(){
+
+double amount = 0.0;
+
+int currentScore = 0;
+
+static_cast<double>(amount);
+
 std::cout << "Place your bet:";
+
 std::cin >> amount;
-if(amount <= 0){
- std::cout << "???" << std::endl;
+
+if(amount < 0){
+
+ std::cout << "Invalid Entry" << std::endl;
+
 }
 else if(amount > Wallet.checkBalance()){
+
     std::cout << "Insufficient Funds" << std::endl;
 }
 else 
 {
-*currentBet = amount;
-std::cout << "You've placed: $" << currentBet << "to bet!" << std::endl;
+currentBet = amount;
+
+std::cout << "You've placed: $" << currentBet
+
+ << "to bet!" << std::endl;
+
 Wallet.removeZephy(amount);
 }
 }
 
 bool Player::Bust(){
-if(*currentScore <= 11 || *currentScore > 17){
+
+if(currentScore >= 17){
+
 return true;
+
 }
+
 else return false;
+
+}
+
+double Player::getBalance(){
+
+    return Wallet.checkBalance();
+}
+
+
+void Player::payout(){
+
 
 }

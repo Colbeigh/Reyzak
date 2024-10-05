@@ -29,7 +29,7 @@ else {
 void PWallet::removeZephy(double amount){
 
 if(amount > *currentZephy){
-    std::cout <<"nope" << std::endl;
+    return 0;
 }    
 else{
     *currentZephy =- amount;
