@@ -21,7 +21,9 @@ Game::~Game() {
 
 void Game::Start() {
     Rules();
-    while (player.getScore() > 0 && playing == true) {
+    while (player.pscore() > 0 && playing == true) {
+        player.pbet= 0;
+        player.score = 0;
         player.placeBet();
         Stakes(player.pbet); // change to player.bet
         SelectSpinner();
@@ -33,7 +35,7 @@ void Game::Start() {
     Exit();
   }
 
-void Game::Stakes(int bet) {
+void Game::Stakes(player.currentbet) {
     if (bet < 25) {
         stakes = "Low";
     } else if (bet >= 25 && bet < 50) {
