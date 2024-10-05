@@ -12,17 +12,21 @@
 class Game {
  public:
   Game();
-
   virtual ~Game();
-
+  
   void Start();
-  void Stakes();
+
+  Player player;
+
+  private:
+  void Stakes(int bet);
   void SelectSpinner();
   void Hit();
   void Exit();
+  void Rules();
 
-  Player player;
   Spinner* current_spinner;
+
 };
 
 #endif
