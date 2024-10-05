@@ -14,7 +14,7 @@ Game::Game() {} // I believe unneccesary in //this class to further implement ju
 Game::~Game() {} // I believe unneccesary in //this class to further implement just going to use default
 
   void Game::Start() {
-    while (player.getScore() > 0 || playing == true) { // change to player.wallet.zephy
+    while (player.getScore() > 0 && playing == true) {
         player.placeBet();
         Stakes(player.pbet); // change to player.bet
         SelectSpinner();
@@ -83,7 +83,7 @@ Game::~Game() {} // I believe unneccesary in //this class to further implement j
     }
   }
 
-  void Game::Exit() {
+  void Exit() {
     std::cout << "Thank's for playing!" << std::endl;
     std::cout << "You left the table with " << player.GetBalance() << " Zephy" << std::endl;
 
@@ -102,5 +102,3 @@ Game::~Game() {} // I believe unneccesary in //this class to further implement j
     bool playing = true; // used for loop in Start()
     bool gambling = true;// used for loop in Start()
     
-
- 
