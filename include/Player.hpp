@@ -17,18 +17,20 @@ class Player
   //Deconstructors
   ~Player();
 
-  
   void placeBet();
 
   bool Bust();
 
   double getBalance();
 
+  void Payout;
+
   int currentscore = 0;
+
   double currentbet = 0.0;
 
 private:
-
+Payout Pay;
 PWallet Wallet;
 
   };

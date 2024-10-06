@@ -23,36 +23,34 @@ Player::Player(){
 //Parameters, 
 void Player:: placeBet(){
 
-double amount = 0.0;
+currentbet = 0.0;
 
-int currentScore = 0;
+currentscore = 0;
 
-static_cast<double>(amount);
+static_cast<double>(currentbet);
 
 std::cout << "Place your bet:";
 
-std::cin >> amount;
+std::cin >> currentbet;
 
-if(amount < 0){
+if(currentbet < 0){
 
  std::cout << "Invalid Entry" << std::endl;
 
 }
-else if(amount > Wallet.checkBalance()){
+else if(currentbet > Wallet.checkBalance()){
 
     std::cout << "Insufficient Funds" << std::endl;
 }
 else 
 {
-currentBet = amount;
+std::cout << "You've placed: $" << currentbet << "to bet!\n";
 
-std::cout << "You've placed: $" << currentBet
+Wallet.removeZephy(currentbet);
 
- << "to bet!" << std::endl;
-
-Wallet.removeZephy(amount);
 }
 }
+
 
 bool Player::Bust(){
 
@@ -72,7 +70,7 @@ double Player::getBalance(){
 }
 
 
-void Player::payout(){
-
+void Player::Payout(){
+    return Pay.calculatePayout(currentscore, currentbet);
 
 }

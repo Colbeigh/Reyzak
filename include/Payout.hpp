@@ -14,7 +14,7 @@ class Payout {
     std::map<int, float> mapPayout; 
     int amount; // Dont think we need this
     int payoutmultiplier; // dont think we need this 
-    int calculatePayout(int playerScore, int betAmout);
+    double calculatePayout(int playerScore, int betAmout);
 };
 
 #endif
