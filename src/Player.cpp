@@ -23,7 +23,7 @@ currentbet = 0.0;
 currentscore = 0;
 }
 
-//Parameters, 
+//Parameters
 void Player:: placeBet() {
 currentbet = 0.0;
 currentscore = 0;
@@ -52,7 +52,7 @@ bool Player::Bust() {
 if(currentscore >= 17) {
 return true;
 } else {return false;
-} 
+}
 }
 
 double Player::getBalance() {
