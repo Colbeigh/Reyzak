@@ -15,13 +15,13 @@ return zephy;
 void PWallet::addZephy(double amount) {
 if(amount < 0) {
     std::cout << "Invalid number" << std::endl;
-}else {zephy += amount;}
+} else {zephy += amount;}
 }
 
 void PWallet::removeZephy(double amount) {
 if(amount < 0) {
     std::cout << "Invalid number\n";
-}else if(amount > zephy) {
-    std::cout << "Insufficient funds\n";
-}else{zephy -= amount;}
+} else if(amount > zephy) {
+    std::cout << "Insufficient funds" << std::endl;
+} else{zephy -= amount;}
 }
