@@ -1,5 +1,7 @@
-// Minimal source file for a placebo class that does nothing but allows the
-// pipeline to pass.
+/**
+ * @author Jem Pineda <j.pineda@uleth.ca>
+ * @date Fall 2024
+*/
 #ifndef PWALLET_HPP_INCLUDED
 #define PWALLET_HPP_INCLUDED
 

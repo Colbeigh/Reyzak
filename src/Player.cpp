@@ -1,16 +1,7 @@
 /**
-Author: Jem Pineda
-Dates:
-
- */
-/**
-want:
-To use payout class to calculate
-getBalance function
-
-
- */
-
+ * @author Jem Pineda <j.pineda@uleth.ca>
+ * @date Fall 2024
+*/
 #include <limits>
 #include <iostream>
 #include "PWallet.hpp"
