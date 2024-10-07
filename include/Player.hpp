@@ -6,10 +6,7 @@
 #ifndef PLAYER_HPP_INCLUDED
 #define PLAYER_HPP_INCLUDED
 
-class Player
-
-{
-  
+class Player{
  public:
   //Constructors
   Player();
@@ -20,10 +17,9 @@ class Player
   int currentscore;
   double currentbet;
 
-private:
+ private:
 Payout Pay;
 PWallet Wallet;
-
-  };
+};
 
 #endif //PLAYER_HPP_INCLUDED

@@ -4,7 +4,7 @@
 #define PWALLET_HPP_INCLUDED
 
 class PWallet {
- public:
+public:
 PWallet();
 ~PWallet();
 double checkBalance() const;
@@ -12,9 +12,8 @@ void removeZephy(double amount);
 void addZephy(double amount);
 
 
-private:
+ private:
 double zephy;
-
 };
 
 #endif //PWALLET_HPP_INCLUDED
