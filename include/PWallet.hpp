@@ -4,7 +4,7 @@
 #define PWALLET_HPP_INCLUDED
 
 class PWallet {
-public:
+ public:
 PWallet();
 ~PWallet();
 double checkBalance() const;
