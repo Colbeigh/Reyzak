@@ -21,7 +21,7 @@ if(amount < 0) {
 void PWallet::removeZephy(double amount) {
 if(amount < 0) {
     std::cout << "Invalid number\n";
-} else if(amount > zephy) {
+} else if (amount > zephy) {
     std::cout << "Insufficient funds" << std::endl;
-} else{zephy -= amount;}
+} else {zephy -= amount;}
 }
