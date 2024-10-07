@@ -21,11 +21,11 @@ Game::~Game() {
 
 void Game::Start() {
     Rules();
-    while (player.pscore() > 0 && playing == true) {
-        player.pbet= 0;
-        player.score = 0;
+    while (player.currentscore > 0 && playing == true) {
+        player.currentbet= 0;
+        player.currentscore = 0;
         player.placeBet();
-        Stakes(player.pbet); // change to player.bet
+        Stakes(player.currentbet); // change to player.bet
         SelectSpinner();
             while (player.Bust() == false || gambling == true) {
                 Hit();
@@ -35,7 +35,7 @@ void Game::Start() {
     Exit();
   }
 
-void Game::Stakes(player.currentbet) {
+void Game::Stakes(int bet) {
     if (bet < 25) {
         stakes = "Low";
     } else if (bet >= 25 && bet < 50) {
@@ -76,7 +76,7 @@ void Game::SelectSpinner() {
 void Game::Hit() {
     char input2;
 
-    std::cout<< "Your current score is: " << player.pscore << "\n";
+    std::cout<< "Your current score is: " << player.currentscore << "\n";
 
     while (true) {
         std::cout << "Would you like to spin?\n";
@@ -88,8 +88,8 @@ void Game::Hit() {
         if (input2 == '1') {
             int rndmnum = spinner->spin(stakes);
             std::cout << "You spun " << rndmnum << "!\n";
-            player.pscore += rndmnum;
-            std::cout << "Your new score is " << player.pscore << "\n";
+            player.currentscore += rndmnum;
+            std::cout << "Your new score is " << player.currentscore << "\n";
             break;
         } else if (input2 == '2') {
             std::cout << "You decided not to spin\n";
@@ -103,13 +103,13 @@ void Game::Hit() {
 
 void Exit() {
     std::cout << "Thank's for playing!\n";
-    std::cout << "You left the table with "<< player.GetBalance();
+    std::cout << "You left the table with "<< player.getBalance();
     std::cout << " Zephy\n";
 
-    if (player.GetBalance() <= 0) {
+    if (player.getBalance() <= 0) {
         std::cout << "Better luck next time\n";
-    } else if (player.GetBalance() > 50) {
-        std::cout << "You made a " << player.GetBalance() - 50 << " profit!\n";
+    } else if (player.getBalance() > 50) {
+        std::cout << "You made a " << player.getBalance() - 50 << " profit!\n";
     }
     playing = false;
   }
