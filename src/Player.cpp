@@ -11,6 +11,7 @@ getBalance function
 
  */
 
+#include <limits>
 #include <iostream>
 #include "PWallet.hpp"
 #include "Player.hpp"
@@ -18,22 +19,26 @@ getBalance function
 
 //Parameters: 
 Player::Player(){
+currentbet = 0.0;
+currentscore = 0;
 }
 
 //Parameters, 
 void Player:: placeBet(){
 
 currentbet = 0.0;
-
 currentscore = 0;
 
-static_cast<double>(currentbet);
-
+while(true){
 std::cout << "Place your bet:";
-
 std::cin >> currentbet;
-
-if(currentbet < 0){
+if(std::cin.fail()){
+    std::cin.clear();
+    std::cin.ignore(std::numeric_limits<
+    std::streamsize>::max(), '\n');
+    std::cout <<"Invalid, Please enter a number\n";
+}
+else if(currentbet < 0){
 
  std::cout << "Invalid Entry" << std::endl;
 
@@ -48,13 +53,15 @@ std::cout << "You've placed: $" << currentbet << "to bet!\n";
 
 Wallet.removeZephy(currentbet);
 
+break;
+}
 }
 }
 
 
 bool Player::Bust(){
 
-if(currentScore >= 17){
+if(currentscore >= 17){
 
 return true;
 
@@ -70,7 +77,7 @@ double Player::getBalance(){
 }
 
 
-void Player::Payout(){
+double Player::Payout(){
     return Pay.calculatePayout(currentscore, currentbet);
 
 }

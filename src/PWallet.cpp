@@ -4,14 +4,13 @@
 #include "PWallet.hpp"
 #include <iostream>
 
-PWallet::PWallet(double &zephy){
+PWallet::PWallet(){
 zephy = 50;
-*currentZephy = zephy;
 }
 
-double PWallet::checkBalance(){
+double PWallet::checkBalance() const{
 
-return *currentZephy;
+return zephy;
 }
 
 void PWallet::addZephy(double amount){
@@ -21,17 +20,19 @@ if(amount < 0){
 
 }
 else {
-*currentZephy =+ amount;
+zephy += amount;
 
 }
 }
 
 void PWallet::removeZephy(double amount){
-
-if(amount > *currentZephy){
-    return 0;
+if(amount < 0){
+    std::cout << "Invalid number\n";
+}
+else if(amount > zephy){
+    std::cout << "Insufficient funds\n";
 }    
 else{
-    *currentZephy =- amount;
+    zephy -= amount;
 }
 }

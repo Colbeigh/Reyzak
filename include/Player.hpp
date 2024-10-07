@@ -13,21 +13,12 @@ class Player
  public:
   //Constructors
   Player();
-
-  //Deconstructors
-  ~Player();
-
   void placeBet();
-
   bool Bust();
-
   double getBalance();
-
-  void Payout;
-
-  int currentscore = 0;
-
-  double currentbet = 0.0;
+  double Payout();
+  int currentscore;
+  double currentbet;
 
 private:
 Payout Pay;
