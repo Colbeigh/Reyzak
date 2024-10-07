@@ -1,18 +1,8 @@
 /**
- * Gamet.cpp created by Colby Hanna (Colby.Hanna@uleth.ca) on 2024-09-29
+ * Game.cpp created by Colby Hanna (Colby.Hanna@uleth.ca) on 2024-09-29
  */
 
 #include "Game.hpp"
-
-#include "Player.hpp"
-#include "Spinner.hpp"
-#include "2to5_Spinner.hpp"
-#include "0to7_Spinner.hpp"
-
-#include <iostream>
-#include <cctype>
-#include <string>
-#include <fstream>
 
 Game::Game() {}
 Game::~Game() {
