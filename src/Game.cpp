@@ -12,7 +12,7 @@ Game::~Game() {
 void Game::Start() {
     Rules();
     while (player.currentscore > 0 && playing == true) {
-        player.currentbet= 0;
+        player.currentbet = 0;
         player.currentscore = 0;
         player.placeBet();
         Stakes(player.currentbet); // change to player.bet

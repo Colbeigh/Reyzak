@@ -20,7 +20,7 @@
  * @brief Manages function for the game and its logic
  */
 class Game {
- public:
+  public:
   Game();
   /**
    * @brief Default constructor for Game. Initializes game components.
@@ -72,7 +72,6 @@ class Game {
    * @brief Pointer to the current spinner being used in the game.
    */
   Spinner* current_spinner;
-
 };
 
 #endif
