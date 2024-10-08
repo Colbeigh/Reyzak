@@ -41,13 +41,20 @@ class Game {
    */
   Player player;
 
- private:
   /**
    * @brief Handles placing stakes for a bet.
    * @param bet The amount of money the player is betting.
    */
   void Stakes(int bet);
 
+    std::string stakes;
+
+  /**
+   * @brief Exits the game.
+   */
+  void Exit();
+
+ private:
   /**
    * @brief Selects a spinner for the game.
    */
@@ -57,11 +64,6 @@ class Game {
    * @brief Processes the "hit" action during the game.
    */
   void Hit();
-
-  /**
-   * @brief Exits the game.
-   */
-  void Exit();
 
   /**
    * @brief Displays the rules of the game.
@@ -82,6 +84,7 @@ class Game {
    * @brief Bool to see if player is still wanting to spin
    */
     bool isgambling;
+
 };
 
 #endif

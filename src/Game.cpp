@@ -34,7 +34,7 @@ void Game::Start() {
 void Game::Stakes(int bet) {
     if (bet < 25) {
         stakes = "Low";
-    } else if (bet >= 25 && bet < 50) {
+    } else if (bet < 50) {
         stakes = "Medium";
     } else {
         stakes = "High";
