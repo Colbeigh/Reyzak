@@ -32,7 +32,7 @@ if(std::cin.fail()) {
 } else if (currentbet > Wallet.checkBalance()) {
     std::cout << "Insufficient Funds" << std::endl;
 } else {
-std::cout << "You've placed: $" << currentbet << "to bet!\n";
+std::cout << "You've placed: $" << currentbet << " to bet!\n";
 Wallet.removeZephy(currentbet);
 break;
 }
