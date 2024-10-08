@@ -84,7 +84,6 @@ class Game {
    * @brief Bool to see if player is still wanting to spin
    */
     bool isgambling;
-
 };
 
 #endif
