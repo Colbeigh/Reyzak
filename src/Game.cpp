@@ -26,7 +26,7 @@ void Game::Start() {
                 Hit();
             }
             isgambling = true;
-            player.Payout();
+            player.getPayout();
     }
     Exit();
   }

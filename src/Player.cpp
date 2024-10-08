@@ -51,6 +51,6 @@ double Player::getBalance() {
 }
 
 
-double Player::Payout() {
+double Player::getPayout() {
     return Pay.calculatePayout(currentscore, currentbet);
 }
