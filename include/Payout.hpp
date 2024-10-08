@@ -4,16 +4,16 @@
 
 #include <iostream>
 #include <map>
-#ifndef PAYOUT_HPP_INCLUDED 
+#ifndef PAYOUT_HPP_INCLUDED
 #define PAYOUT_HPP_INCLUDED
 
 class Payout {
-    public: 
-    Payout(); 
+ public:
+    Payout();
     virtual ~Payout(); // I'm not so sure we need this. for payout
-    std::map<int, float> mapPayout; 
+    std::map<int, float> mapPayout;
     int amount; // Dont think we need this
-    int payoutmultiplier; // dont think we need this 
+    int payoutmultiplier; // dont think we need this
     double calculatePayout(int playerScore, int betAmout);
 };
 

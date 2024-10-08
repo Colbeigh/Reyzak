@@ -6,6 +6,8 @@
 #ifndef SPINNER_H
 #define SPINNER_H
 
+#include <string>
+
 /**
  * @brief a base class for Spinner Objects
  */

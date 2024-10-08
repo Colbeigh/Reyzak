@@ -12,14 +12,12 @@ Payout::Payout() {
     };
 }
 
-Payout::~Payout() {}; // Don't know if we need this for payout
+Payout::~Payout() {} // Don't know if we need this for payout
 
 double Payout::calculatePayout(int playerScore, double betAmout) {
-
     auto it = mapPayout.find(playerScore);
 
     if (it != mapPayout.end()) {
-        
         double multiplayer = it -> second;
         double payout = betAmout * multiplayer;
 
@@ -27,10 +25,7 @@ double Payout::calculatePayout(int playerScore, double betAmout) {
 
         return payout;
 
-    } else { 
+    } else {
         std::cout << "No payout Player Score is: " << playerScore << std::endl;
     }
-
-    
-    
-};
+}
