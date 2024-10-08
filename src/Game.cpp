@@ -5,13 +5,13 @@
 #include "Game.hpp"
 
 Game::Game() {
-    spinner = nullptr;
+    current_spinner = nullptr;
     isplaying = true; // used for loop in Start()
     isgambling = true;// used for loop in Start()
     stakes = "";
 }
 Game::~Game() {
-    delete spinner;
+    delete current_spinner;
 }
 
 void Game::Start() {
@@ -50,18 +50,18 @@ void Game::SelectSpinner() {
         std::cout <<  "2 - 0 to 7 Spinner\n3 - Display Rules\n";
         std::cin >> input;
 
-        if (spinner != nullptr) {
-            delete spinner;
-            spinner = nullptr;
+        if (current_spinner != nullptr) {
+            delete current_spinner;
+            current_spinner = nullptr;
         }
 
-        if (input == '1') {
-            spinner = new FiveSpinner();
+        if (input == 1) {
+            current_spinner = new FiveSpinner();
             std::cout << "You have selected the 2 to 5 spinner!\n";
-        } else if (input == '2') {
-            spinner = new SevenSpinner();
+        } else if (input == 2) {
+            current_spinner = new SevenSpinner();
             std::cout << "You have selected the 0 to 7 spinnern\n";
-        } else if (input == '3') {
+        } else if (input == 3) {
             Rules();
         } else {
             std::cout<< "Invalid input, Try again\n";
@@ -81,17 +81,17 @@ void Game::Hit() {
         std::cin >> input2;
 
         input2 = std::toupper(input2);
-        if (input2 == '1') {
-            int rndmnum = spinner->spin(stakes);
+        if (input2 == 1) {
+            int rndmnum = current_spinner->spin(stakes);
             std::cout << "You spun " << rndmnum << "!\n";
             player.currentscore += rndmnum;
             std::cout << "Your new score is " << player.currentscore << "\n";
             break;
-        } else if (input2 == '2') {
+        } else if (input2 == 2) {
             std::cout << "You decided not to spin\n";
             isgambling = false;
             break;
-        } else if (input2 == '3') {
+        } else if (input2 == 3) {
             Rules();
         }
     }
@@ -128,7 +128,7 @@ void Game::Rules() {
 }
 
     Player player;
-    Spinner* spinner;
+    Spinner* current_spinner;
     std::string stakes;
     bool isplaying;
     bool isgambling;

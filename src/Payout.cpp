@@ -27,5 +27,6 @@ double Payout::calculatePayout(int playerScore, double betAmout) {
 
     } else {
         std::cout << "No payout Player Score is: " << playerScore << std::endl;
+        return 0.0;
     }
 }
