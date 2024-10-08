@@ -10,6 +10,10 @@
  */
 class SevenSpinner : public Spinner {
   int spin(std::string Stakes) override;
+
+  int LowStakes(int NumberGuessed);
+
+  int HighStakes(int NumberGuessed);
 };
 
 #endif

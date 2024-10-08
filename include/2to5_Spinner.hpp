@@ -2,6 +2,7 @@
 #define TWOTOFIVESPINNER_HPP
 
 #include "Spinner.hpp"
+#include "MakeRandomInt.hpp"
 #include <string>
 
 /**
@@ -10,6 +11,13 @@
 class FiveSpinner : public Spinner {
   //override function for spin
   int spin(std::string Stakes) override;
+
+  //High Stakes function, has bias for higher numbers
+  int HighStakes(int NumberGuessed);
+
+  //Low Stakes function, has bias for lower numbers
+  int LowStakes();
+
 };
 
 #endif
