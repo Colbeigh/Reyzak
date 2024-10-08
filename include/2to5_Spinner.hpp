@@ -16,7 +16,7 @@ class FiveSpinner : public Spinner {
   int HighStakes(int NumberGuessed);
 
   //Low Stakes function, has bias for lower numbers
-  int LowStakes();
+  int LowStakes(int NumberGuessed);
 
 };
 
