@@ -20,7 +20,7 @@
  * @brief Manages function for the game and its logic
  */
 class Game {
-  public:
+ public:
   Game();
   /**
    * @brief Default constructor for Game. Initializes game components.
@@ -41,7 +41,7 @@ class Game {
    */
   Player player;
 
-  private:
+ private:
   /**
    * @brief Handles placing stakes for a bet.
    * @param bet The amount of money the player is betting.
