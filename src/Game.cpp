@@ -4,22 +4,28 @@
 
 #include "Game.hpp"
 
-Game::Game() {}
+Game::Game() {
+    spinner = nullptr;
+    isplaying = true; // used for loop in Start()
+    isgambling = true;// used for loop in Start()
+    stakes = "";
+}
 Game::~Game() {
     delete spinner;
 }
 
 void Game::Start() {
     Rules();
-    while (player.currentscore > 0 && playing == true) {
+    while (player.currentscore > 0 && isplaying == true) {
         player.currentbet = 0;
         player.currentscore = 0;
         player.placeBet();
-        Stakes(player.currentbet); // change to player.bet
+        Stakes(player.currentbet);
         SelectSpinner();
-            while (player.Bust() == false || gambling == true) {
+            while (player.Bust() == false || isgambling == true) {
                 Hit();
             }
+            isgambling = true;
             player.Payout();
     }
     Exit();
@@ -83,7 +89,7 @@ void Game::Hit() {
             break;
         } else if (input2 == '2') {
             std::cout << "You decided not to spin\n";
-            gambling = false;
+            isgambling = false;
             break;
         } else if (input2 == '3') {
             Rules();
@@ -91,20 +97,20 @@ void Game::Hit() {
     }
   }
 
-void Exit() {
+void Game::Exit() {
     std::cout << "Thank's for playing!\n";
-    std::cout << "You left the table with "<< player.getBalance();
+    std::cout << "You left the table with $"<< player.getBalance();
     std::cout << " Zephy\n";
 
     if (player.getBalance() <= 0) {
         std::cout << "Better luck next time\n";
     } else if (player.getBalance() > 50) {
-        std::cout << "You made a " << player.getBalance() - 50 << " profit!\n";
+        std::cout << "You made a $" << player.getBalance() - 50 << " profit!\n";
     }
-    playing = false;
+    isplaying = false;
   }
 
-void Rules() {
+void Game::Rules() {
     std::ifstream inputFile("Rules.txt");
 
     if (!inputFile) {
@@ -122,7 +128,7 @@ void Rules() {
 }
 
     Player player;
-    Spinner* spinner = nullptr;
+    Spinner* spinner;
     std::string stakes;
-    bool playing = true; // used for loop in Start()
-    bool gambling = true;// used for loop in Start()
+    bool isplaying;
+    bool isgambling;

@@ -72,6 +72,16 @@ class Game {
    * @brief Pointer to the current spinner being used in the game.
    */
   Spinner* current_spinner;
+
+  /**
+   * @brief Bool to see if player is still playing the game
+   */
+    bool isplaying;
+
+    /**
+   * @brief Bool to see if player is still wanting to spin
+   */
+    bool isgambling;
 };
 
 #endif
