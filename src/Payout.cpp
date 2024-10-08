@@ -21,7 +21,7 @@ double Payout::calculatePayout(int playerScore, double betAmout) {
         double multiplayer = it -> second;
         double payout = betAmout * multiplayer;
 
-        std::cout << "The payout Amount" << payout << std::endl;
+        std::cout << "The payout amount" << payout << std::endl;
 
         return payout;
 
