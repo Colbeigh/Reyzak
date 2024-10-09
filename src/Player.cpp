@@ -54,7 +54,7 @@ double Player::getBalance() {
 
 void Player::getPayout() {
     currentbet = Pay.calculatePayout(currentscore, currentbet);
-    if (currentbet > 0 ) {
+    if (currentbet > 0) {
         Wallet.addZephy(currentbet);
         std::cout << "Your new balance is $" << Wallet.checkBalance() << "/n";
     }
