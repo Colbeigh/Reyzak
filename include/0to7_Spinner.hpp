@@ -11,9 +11,9 @@
 class SevenSpinner : public Spinner {
   int spin(std::string Stakes) override;
 
-  int LowStakes(int NumberGuessed);
+  int LowStakes(int NumberGuessed) override;
 
-  int HighStakes(int NumberGuessed);
+  int HighStakes(int NumberGuessed) override;
 };
 
 #endif
