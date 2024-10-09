@@ -1,5 +1,7 @@
 /**
- * payout.hpp created by Nikita Evtushenko (nikita.evtushenko@uleth.ca) on 2024-09-29
+ * Payout.hpp
+ * @author Nikita Evtushenko (nikita.evtushenko@uleth.ca)
+ * @date 2024-09-29
  */
 
 #include <iostream>
