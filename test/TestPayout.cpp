@@ -36,11 +36,6 @@ TEST(PayoutTest, testPayout7) {
     EXPECT_EQ(40, p.calculatePayout(17, 20));
 }
 
-int main(int argc, char **argv) {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
-
 
 
 
