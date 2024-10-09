@@ -1,3 +1,8 @@
+/**
+ * TestPayout.cpp createad by Nikita Evtushenko (nikita.evtushenko@uleth.ca) on 2024-10-9
+ * @author Nikita Evtushenko
+ * @date 2024-10-9
+*/
 #include "gtest/gtest.h"
 #include "Payout.hpp"
 

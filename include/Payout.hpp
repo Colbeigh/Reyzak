@@ -1,6 +1,6 @@
 /**
- * Payout.hpp
- * @author Nikita Evtushenko (nikita.evtushenko@uleth.ca)
+ * Payout.hpp Nikita Evtushenko (nikita.evtushenko@uleth.ca) on 2024-09-29
+ * @author Nikita Evtushenko
  * @date 2024-09-29
  */
 
