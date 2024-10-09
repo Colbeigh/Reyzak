@@ -19,6 +19,8 @@ class Spinner {
      */
   Spinner();
 
+  virtual ~Spinner();
+
    /**
      * @brief Pure virtual function for the spin method
      */
@@ -27,8 +29,6 @@ class Spinner {
   virtual int LowStakes(int NumberGuessed) = 0;
 
   virtual int HighStakes(int NumberGuessed) = 0;
-
-  virtual ~Spinner();
 };
 
 #endif
