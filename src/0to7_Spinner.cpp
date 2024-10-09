@@ -25,7 +25,8 @@ int SevenSpinner::spin(std::string Stakes) {
 
 int SevenSpinner::LowStakes(int NumberGuessed) {
   if (NumberGuessed >= 4) {
-    NumberGuessed -= rng->getValue(3) + 1; //minuses random number from Range 1-3
+    //minuses random number from Range 1-3
+    NumberGuessed -= rng->getValue(3) + 1; 
   }
 
   return NumberGuessed;

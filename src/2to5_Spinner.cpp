@@ -18,9 +18,9 @@ int FiveSpinner::spin(std::string Stakes) {
   NumberSpin = rng->getValue(4) + 2;
 
   if (Stakes == "Low") {
-   NumberSpin = LowStakes(NumberSpin);
+    NumberSpin = LowStakes(NumberSpin);
   } else if (Stakes == "High") {
-   NumberSpin = HighStakes(NumberSpin);
+    NumberSpin = HighStakes(NumberSpin);
   }
 
   return NumberSpin;
@@ -29,7 +29,8 @@ int FiveSpinner::spin(std::string Stakes) {
 //HighStakes
 int FiveSpinner::HighStakes(int NumberGuessed) {
   if (NumberGuessed <= 3) {
-    NumberGuessed += rng->getValue(3) + 1; //add random number to low guess from range 1-2
+    //add random number to low guess from range 1-2
+    NumberGuessed += rng->getValue(3) + 1;
   }
 
   return NumberGuessed;
