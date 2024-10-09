@@ -29,9 +29,6 @@ class Spinner {
   virtual int HighStakes(int NumberGuessed) = 0;
 
   virtual ~Spinner();
-  
-
- 
 };
 
 #endif
