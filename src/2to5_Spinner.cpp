@@ -9,9 +9,9 @@
 #include <string>
 
 //Instantiate instance of MakeRandomInt
-MakeRandomInt* rng = MakeRandomInt::getInstance();
 
 //overridden Spin function
+MakeRandomInt* rng = MakeRandomInt::getInstance();
 int FiveSpinner::spin(std::string Stakes) {
   int NumberSpin;
   //get random number from our range 2-5
@@ -27,6 +27,7 @@ int FiveSpinner::spin(std::string Stakes) {
 }
 
 //HighStakes
+MakeRandomInt* rng = MakeRandomInt::getInstance();
 int FiveSpinner::HighStakes(int NumberGuessed) {
   if (NumberGuessed <= 3) {
     //add random number to low guess from range 1-2
@@ -37,6 +38,7 @@ int FiveSpinner::HighStakes(int NumberGuessed) {
 }
 
 int FiveSpinner::LowStakes(int NumberGuessed) {
+  MakeRandomInt* rng = MakeRandomInt::getInstance();
   //if our guess is greater than or = 4
   // generate a random number from 1-2 to minus to make our number lower
   if (NumberGuessed >= 4) {
