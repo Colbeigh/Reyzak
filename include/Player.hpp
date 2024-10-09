@@ -35,7 +35,7 @@ class Player{
   * @brief Access the payout
   * @return the payout
   */
-  double getPayout();
+  void getPayout();
   int currentscore;
   double currentbet;
 

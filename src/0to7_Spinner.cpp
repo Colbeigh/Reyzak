@@ -8,9 +8,9 @@
 #include <string>
 
 //instantiate MakeRandomInt
-MakeRandomInt* rng = MakeRandomInt::getInstance();
 
 int SevenSpinner::spin(std::string Stakes) {
+  MakeRandomInt* rng = MakeRandomInt::getInstance();
   //Get random value from 0-7 range
   int guess = rng->getValue(8);
 
@@ -25,6 +25,7 @@ int SevenSpinner::spin(std::string Stakes) {
 
 int SevenSpinner::LowStakes(int NumberGuessed) {
   if (NumberGuessed >= 4) {
+    MakeRandomInt* rng = MakeRandomInt::getInstance();
     //minuses random number from Range 1-3
     NumberGuessed -= rng->getValue(3) + 1;
   }
@@ -33,6 +34,7 @@ int SevenSpinner::LowStakes(int NumberGuessed) {
 }
 
 int SevenSpinner::HighStakes(int NumberGuessed) {
+  MakeRandomInt* rng = MakeRandomInt::getInstance();
   if (NumberGuessed <= 4) {
     NumberGuessed += rng->getValue(3) + 1; // adds random number from range 1-3
   }
