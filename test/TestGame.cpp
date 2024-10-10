@@ -43,9 +43,9 @@ TEST(TestGame, TestPlayerPayout) {
 
 TEST(TestGame, TestExitWithNoBalance) {
     Game game;
-    game.player.currentscore = 0;
-    game.player.currentbet = 50;
-    game.player.getPayout();
+    game.player.currentscore += 0; // Simulate winning score
+    game.player.currentbet = 50; // Place a bet
+    game.player.getPayout(); // Calculate payout
 
     std::ostringstream output; // Capture output
     std::streambuf* oldCout = std::cout.rdbuf(output.rdbuf());
