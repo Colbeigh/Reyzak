@@ -58,7 +58,7 @@ TEST(TestGame, TestExitWithNoBalance) {
 
 TEST(TestGame, TestExitWithProfit) {
     Game game;
-    game.player.currentscore += 60; // Simulate winning score
+    game.player.currentscore += 17; // Simulate winning score
     std::ostringstream output; // Capture output
     std::streambuf* oldCout = std::cout.rdbuf(output.rdbuf());
 
