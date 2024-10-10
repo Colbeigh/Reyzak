@@ -35,7 +35,7 @@ TEST(TestGame, TestStakesHigh) {
 
 TEST(TestGame, TestPlayerPayout) {
     Game game;
-    game.player.currentscore += 30; // Simulating a spin that wins
+    game.player.currentscore += 17; // Simulating a spin that wins
     game.player.currentbet = 20; // Set bet
     game.player.getPayout();
     EXPECT_GT(game.player.getBalance(), 50);
