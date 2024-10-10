@@ -3,7 +3,6 @@
  * @date Fall 2024
 */
 #include "PWallet.hpp"
-#include <iostream>
 
 PWallet::PWallet() {
 zephy = 50;

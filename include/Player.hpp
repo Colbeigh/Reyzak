@@ -4,6 +4,9 @@
 */
 #include "Payout.hpp"
 #include "PWallet.hpp"
+#include <limits>
+#include <iostream>
+#include "Payout.hpp"
 #ifndef PLAYER_HPP_INCLUDED
 #define PLAYER_HPP_INCLUDED
 /**

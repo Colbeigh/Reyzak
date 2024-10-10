@@ -2,6 +2,7 @@
  * @author Jem Pineda <j.pineda@uleth.ca>
  * @date Fall 2024
 */
+#include <iostream>
 #ifndef PWALLET_HPP_INCLUDED
 #define PWALLET_HPP_INCLUDED
 /**

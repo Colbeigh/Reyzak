@@ -2,11 +2,7 @@
  * @author Jem Pineda <j.pineda@uleth.ca>
  * @date Fall 2024
 */
-#include <limits>
-#include <iostream>
-#include "PWallet.hpp"
 #include "Player.hpp"
-#include "Payout.hpp"
 
 //Parameters:
 Player::Player() {
