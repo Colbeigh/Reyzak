@@ -6,8 +6,8 @@
 
 Game::Game() {
     current_spinner = nullptr;
-    isplaying = true; // used for loop in Start()
-    isgambling = true;// used for loop in Start()
+    isplaying = true;
+    isgambling = true;
     stakes = "";
 }
 Game::~Game() {
