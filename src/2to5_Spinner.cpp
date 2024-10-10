@@ -31,7 +31,7 @@ int FiveSpinner::HighStakes(int NumberGuessed) {
   MakeRandomInt* rng = MakeRandomInt::getInstance();
   if (NumberGuessed <= 3) {
     //add random number to low guess from range 1-2
-    NumberGuessed += rng->getValue(3) + 1;
+    NumberGuessed += rng->getValue(2) + 1;
   }
 
   return NumberGuessed;
