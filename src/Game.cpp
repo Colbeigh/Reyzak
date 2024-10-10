@@ -50,6 +50,13 @@ void Game::SelectSpinner() {
         std::cout <<  "2 - 0 to 7 Spinner\n3 - Display Rules\n";
         std::cin >> input;
 
+        if (std::cin.fail()) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "Invalid input, Try again\n";
+            continue;
+        }
+
         if (current_spinner != nullptr) {
             delete current_spinner;
             current_spinner = nullptr;
@@ -79,8 +86,14 @@ void Game::Hit() {
     while (true) {
         std::cout << "Would you like to spin?\n";
         std::cout << "1 - Yes\n2 - No\n3 - Display Rules\n";
-
         std::cin >> input;
+
+        if (std::cin.fail()) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "Invalid input, Try again\n";
+            continue;
+        }
 
         if (input == 1) {
             int rndmnum = current_spinner->spin(stakes);
@@ -138,8 +151,15 @@ void Game::Playing() {
     while (true) {
         std::cout << "Would you like to play again?\n";
         std::cout << "1 - Yes\n2 - No\n";
-
         std::cin >> input;
+
+        if (std::cin.fail()) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "Invalid input, Try again\n";
+            continue;
+        }
+
         if (input == 1) {
             isgambling = true;
             break;
