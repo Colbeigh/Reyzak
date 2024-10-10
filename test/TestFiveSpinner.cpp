@@ -39,5 +39,4 @@ TEST(TestFiveSpinner, TestHighStakesBias) {
 
     int result3 = Spinner.HighStakes(4);
     EXPECT_EQ(result3, 4);
-
 }
