@@ -25,8 +25,8 @@ void Game::Start() {
             while (player.Bust() == false && isgambling == true) {
                 Hit();
             }
-            isgambling = true;
             player.getPayout();
+            Playing();
     }
     Exit();
   }
@@ -72,7 +72,7 @@ void Game::SelectSpinner() {
   }
 
 void Game::Hit() {
-    int input2;
+    int input;
 
     std::cout<< "Your current score is: " << player.currentscore << "\n";
 
@@ -80,20 +80,19 @@ void Game::Hit() {
         std::cout << "Would you like to spin?\n";
         std::cout << "1 - Yes\n2 - No\n3 - Display Rules\n";
 
-        std::cin >> input2;
+        std::cin >> input;
 
-        input2 = std::toupper(input2);
-        if (input2 == 1) {
+        if (input == 1) {
             int rndmnum = current_spinner->spin(stakes);
             std::cout << "You spun " << rndmnum << "!\n";
             player.currentscore += rndmnum;
             std::cout << "Your new score is " << player.currentscore << "\n";
             break;
-        } else if (input2 == 2) {
+        } else if (input == 2) {
             std::cout << "You decided not to spin\n";
             isgambling = false;
             break;
-        } else if (input2 == 3) {
+        } else if (input == 3) {
             Rules();
         }
     }
@@ -128,6 +127,28 @@ void Game::Rules() {
     }
 
     inputFile.close();
+}
+
+void Game::Playing() {
+    int input;
+    if (player.getBalance() == 0) {
+        std::cout << "Exiting\n";
+        return;
+    }
+    while (true) {
+        std::cout << "Would you like to play again?\n";
+        std::cout << "1 - Yes\n2 - No\n";
+
+        std::cin >> input;
+        if (input == 1) {
+            isgambling = true;
+            break;
+        } else if (input == 2) {
+            std::cout << "Exiting\n";
+            isplaying = false;
+            break;
+        }
+    }
 }
 
     Player player;

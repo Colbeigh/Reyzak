@@ -71,6 +71,11 @@ class Game {
   void Rules();
 
   /**
+   * @brief Asks if player would like to play again
+   */
+  void Playing();
+
+  /**
    * @brief Pointer to the current spinner being used in the game.
    */
   Spinner* current_spinner;
