@@ -8,26 +8,22 @@
 #include <limits>
 #include <iostream>
 
-TEST(TestPlayer, defaultConstructorTest){
+TEST(TestPlayer, defaultConstructorTest) {
     Player Steve;
-
     EXPECT_EQ(Steve.currentbet, 0.0);
     EXPECT_EQ(Steve.currentscore, 0);
 }
 
-TEST(TestPlayer, placeBetTest){
+TEST(TestPlayer, placeBetTest) {
     Player Steve;
     Steve.placeBet;
     EXPECT_THROW("A", "Invalid, Please enter a number\n");
 }
 
-TEST(TestPlayer, BustTest){
-
+TEST(TestPlayer, BustTest) {
 }
-TEST(TestPlayer, getBalanceTest){
-
+TEST(TestPlayer, getBalanceTest) {
 }
 
-TEST(TestPlayer, getpayoutTest){
-
+TEST(TestPlayer, getpayoutTest) {
 }
