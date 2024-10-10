@@ -105,7 +105,8 @@ void Game::Exit() {
     if (player.getBalance() <= 0.0) {
         std::cout << "Better luck next time\n";
     } else if (player.getBalance() > 50.0) {
-        std::cout << "You made a $" << player.getBalance() - 50.0 << " profit!\n";
+        std::cout << "You made a $" << player.getBalance() - 50.0;
+        std::cout << " profit!\n";
     }
     isplaying = false;
   }
