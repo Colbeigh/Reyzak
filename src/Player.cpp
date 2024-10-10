@@ -8,11 +8,11 @@
 Player::Player() {
 currentbet = 0.0;
 currentscore = 0;
+PWallet Wallet;
 }
 
 //Parameters
 void Player:: placeBet() {
-PWallet Wallet;
 currentbet = 0.0;
 currentscore = 0;
 
