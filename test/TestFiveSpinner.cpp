@@ -40,3 +40,11 @@ TEST(TestFiveSpinner, TestHighStakesBias) {
     int result3 = Spinner.HighStakes(4);
     EXPECT_EQ(result3, 4);
 }
+TEST(TestFiveSpinner, TestHighStakesMultipleSpins) {
+    FiveSpinner Spinner;
+    for (int i = 0; i < 10; i++) {
+        int result = Spinner.spin("High");
+        EXPECT_LE(result, 5); //verify our result is less than 5
+        EXPECT_GE(result, 2); //verify our result is greater than 2
+    }
+}
