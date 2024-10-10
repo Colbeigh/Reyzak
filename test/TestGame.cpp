@@ -67,9 +67,3 @@ TEST(TestGame, TestExitWithProfit) {
     std::cout.rdbuf(oldCout); // Reset cout
     EXPECT_TRUE(output.str().find("You made a $") != std::string::npos);
 }
-
-int main(int argc, char **argv) {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
-
