@@ -16,7 +16,7 @@ Game::~Game() {
 
 void Game::Start() {
     Rules();
-    while (player.currentscore > 0 && isplaying == true) {
+    while (player.getBalance() > 0 && isplaying == true) {
         player.currentbet = 0;
         player.currentscore = 0;
         player.placeBet();
