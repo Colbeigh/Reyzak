@@ -25,3 +25,19 @@ TEST(TestFiveSpinner, TestLowStakesBias) {
     EXPECT_LT(result2, 5);
     EXPECT_GT(result2, 2);
 }
+
+TEST(TestFiveSpinner, TestHighStakesBias) {
+    FiveSpinner Spinner;
+    int result = Spinner.HighStakes(3);
+
+    EXPECT_LE(result, 5);
+    EXPECT_GT(result, 3);
+
+    int result2 = Spinner.HighStakes(2);
+    EXPECT_LT(result2, 5);
+    EXPECT_GT(result2, 2);
+
+    int result3 = Spinner.HighStakes(4);
+    EXPECT_EQ(result3, 4);
+
+}
