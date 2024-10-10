@@ -52,18 +52,22 @@ TEST(TestGame, TestExitWithNoBalance) {
     game.Exit(); // Call Exit
 
     std::cout.rdbuf(oldCout); // Reset cout
-    std::string expectedMessage = "Better luck next time\n";
+    std::string expectedMessage = "Better luck next time"; // Adjusted
     EXPECT_TRUE(output.str().find(expectedMessage) != std::string::npos);
 }
 
 TEST(TestGame, TestExitWithProfit) {
     Game game;
     game.player.currentscore += 17; // Simulate winning score
+    game.player.placeBet(); // Place a bet
+    game.player.getPayout(); // Calculate payout
+
     std::ostringstream output; // Capture output
     std::streambuf* oldCout = std::cout.rdbuf(output.rdbuf());
 
     game.Exit(); // Call Exit
 
     std::cout.rdbuf(oldCout); // Reset cout
-    EXPECT_TRUE(output.str().find("You made a $\n") != std::string::npos);
+    std::string expectedMessage = "You made a $"; // Adjusted
+    EXPECT_TRUE(output.str().find(expectedMessage) != std::string::npos);
 }

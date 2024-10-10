@@ -60,7 +60,7 @@ void Game::SelectSpinner() {
             std::cout << "You have selected the 2 to 5 spinner!\n";
         } else if (input == 2) {
             current_spinner = new SevenSpinner();
-            std::cout << "You have selected the 0 to 7 spinnern\n";
+            std::cout << "You have selected the 0 to 7 spinner!\n";
         } else if (input == 3) {
             Rules();
         } else {
