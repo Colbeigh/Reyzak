@@ -58,9 +58,11 @@ void Game::SelectSpinner() {
         if (input == 1) {
             current_spinner = new FiveSpinner();
             std::cout << "You have selected the 2 to 5 spinner!\n";
+            break;
         } else if (input == 2) {
             current_spinner = new SevenSpinner();
             std::cout << "You have selected the 0 to 7 spinner!\n";
+            break;
         } else if (input == 3) {
             Rules();
         } else {
@@ -70,7 +72,7 @@ void Game::SelectSpinner() {
   }
 
 void Game::Hit() {
-    char input2;
+    int input2;
 
     std::cout<< "Your current score is: " << player.currentscore << "\n";
 
