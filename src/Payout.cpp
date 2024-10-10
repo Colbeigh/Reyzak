@@ -1,3 +1,8 @@
+/**
+ * Payout.cpp create by Nikita Evtushenko (nikita.evtushenko@uleth.ca) on 2024-09-29
+ * @author Nikita Evtushenko
+ * @date 2024-09-29
+*/
 #include "Payout.hpp"
 #include <iostream>
 
@@ -21,7 +26,7 @@ double Payout::calculatePayout(int playerScore, double betAmout) {
         double multiplayer = it -> second;
         double payout = betAmout * multiplayer;
 
-        std::cout << "The payout amount" << payout << std::endl;
+        std::cout << "The payout amount is: " << payout << std::endl;
 
         return payout;
 
