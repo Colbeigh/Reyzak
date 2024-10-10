@@ -22,7 +22,7 @@ void Game::Start() {
         player.placeBet();
         Stakes(player.currentbet);
         SelectSpinner();
-            while (player.Bust() == false || isgambling == true) {
+            while (player.Bust() == false && isgambling == true) {
                 Hit();
             }
             isgambling = true;
