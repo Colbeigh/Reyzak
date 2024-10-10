@@ -12,7 +12,7 @@ TEST(TestGame, TestInitialScore) {
 
 TEST(TestGame, TestInitialBalance) {
     Game game;
-    EXPECT_EQ(game.player.getBalance(), 50); // Balance should always start at 50
+    EXPECT_EQ(game.player.getBalance(), 50);
 }
 
 TEST(TestGame, TestStakesLow) {
@@ -37,8 +37,8 @@ TEST(TestGame, TestPlayerPayout) {
     Game game;
     game.player.currentscore += 30; // Simulating a spin that wins
     game.player.currentbet = 20; // Set bet
-    game.player.getPayout(); // Assume this increases balance based on some logic
-    EXPECT_GT(game.player.getBalance(), 50); // Expect balance to increase after payout
+    game.player.getPayout();
+    EXPECT_GT(game.player.getBalance(), 50);
 }
 
 TEST(TestGame, TestExitWithNoBalance) {
@@ -47,24 +47,24 @@ TEST(TestGame, TestExitWithNoBalance) {
     game.player.currentbet = 50; // Bet the entire balance
     game.player.getPayout(); // Simulate the payout
     std::ostringstream output; // Capture output
-    std::streambuf* oldCout = std::cout.rdbuf(output.rdbuf()); // Redirect cout to output string stream
+    std::streambuf* oldCout = std::cout.rdbuf(output.rdbuf());
 
     game.Exit(); // Call Exit
 
     std::cout.rdbuf(oldCout); // Reset cout
-    EXPECT_TRUE(output.str().find("Better luck next time") != std::string::npos); // Check output
+    EXPECT_TRUE(output.str().find("Better luck next time") != std::string::npos);
 }
 
 TEST(TestGame, TestExitWithProfit) {
     Game game;
     game.player.currentscore += 60; // Simulate winning score
     std::ostringstream output; // Capture output
-    std::streambuf* oldCout = std::cout.rdbuf(output.rdbuf()); // Redirect cout to output string stream
+    std::streambuf* oldCout = std::cout.rdbuf(output.rdbuf());
 
     game.Exit(); // Call Exit
 
     std::cout.rdbuf(oldCout); // Reset cout
-    EXPECT_TRUE(output.str().find("You made a $") != std::string::npos); // Check output for profit message
+    EXPECT_TRUE(output.str().find("You made a $") != std::string::npos);
 }
 
 int main(int argc, char **argv) {
