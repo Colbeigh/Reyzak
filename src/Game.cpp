@@ -102,10 +102,10 @@ void Game::Exit() {
     std::cout << "You left the table with $"<< player.getBalance();
     std::cout << " Zephy\n";
 
-    if (player.getBalance() <= 0) {
+    if (player.getBalance() <= 0.0) {
         std::cout << "Better luck next time\n";
-    } else if (player.getBalance() > 50) {
-        std::cout << "You made a $" << player.getBalance() - 50 << " profit!\n";
+    } else if (player.getBalance() > 50.0) {
+        std::cout << "You made a $" << player.getBalance() - 50.0 << " profit!\n";
     }
     isplaying = false;
   }
