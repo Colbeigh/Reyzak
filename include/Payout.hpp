@@ -8,14 +8,35 @@
 #include <map>
 #ifndef PAYOUT_HPP_INCLUDED
 #define PAYOUT_HPP_INCLUDED
-
+ /**
+    * @brief a class to calculate the payout 
+    * @details makes a map to have preset calculation percentages
+    * has a function called calculatePayout that takes in playerScore and betAmount
+    * from Player.hpp 
+    */
 class Payout {
  public:
+    /**
+     * @brief Default constructor for Payout.
+    */
     Payout();
-    virtual ~Payout(); // I'm not so sure we need this. for payout
+
+    /**
+     * @brief Destructor
+    */
+    virtual ~Payout();
+
+    /**
+     * @brief create a key value pair of integer and floats 
+     * the ints are the playerScore and floats are the payout %
+    */
     std::map<int, float> mapPayout;
-    int amount; // Dont think we need this
-    int payoutmultiplier; // dont think we need this
+
+    /**
+     * @brief calculatePayout takes the playerScroe and betAmout 
+     * which will compare against the map 
+     * and comapre with the keys to see if the result is correct
+    */
     double calculatePayout(int playerScore, double betAmout);
 };
 

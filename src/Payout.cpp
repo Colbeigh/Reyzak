@@ -4,7 +4,6 @@
  * @date 2024-09-29
 */
 #include "Payout.hpp"
-#include <iostream>
 
 Payout::Payout() {
     mapPayout = {
@@ -17,7 +16,7 @@ Payout::Payout() {
     };
 }
 
-Payout::~Payout() {} // Don't know if we need this for payout
+Payout::~Payout() {}
 
 double Payout::calculatePayout(int playerScore, double betAmout) {
     auto it = mapPayout.find(playerScore);
