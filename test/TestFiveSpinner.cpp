@@ -9,6 +9,6 @@
 TEST(TestFiveSpinner, TestSpinRange) {
     FiveSpinner Spinner;
     int result = Spinner.spin("NONE");
-    EXPECT_LE(result, 5);
-    EXPECT_GE(result, 2);
+    EXPECT_LE(result, 5); //verify our result is less than 5
+    EXPECT_GE(result, 2); //verify our result is greater than 2
 }
