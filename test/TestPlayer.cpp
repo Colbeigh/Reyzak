@@ -19,7 +19,6 @@ TEST(TestPlayer, placeBetTest) {
     Player Steve;
     Steve.placeBet();
     EXPECT_EQ(Steve.currentbet = -1 , "Invalid Entry");
-
 }
 
 TEST(TestPlayer, BustTest) {
