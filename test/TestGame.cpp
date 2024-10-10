@@ -52,7 +52,7 @@ TEST(TestGame, TestExitWithNoBalance) {
     game.Exit(); // Call Exit
 
     std::cout.rdbuf(oldCout); // Reset cout
-    std::string expectedMessage = "Better luck next time";
+    std::string expectedMessage = "Better luck next time\n";
     EXPECT_TRUE(output.str().find(expectedMessage) != std::string::npos);
 }
 
@@ -65,5 +65,5 @@ TEST(TestGame, TestExitWithProfit) {
     game.Exit(); // Call Exit
 
     std::cout.rdbuf(oldCout); // Reset cout
-    EXPECT_TRUE(output.str().find("You made a $") != std::string::npos);
+    EXPECT_TRUE(output.str().find("You made a $\n") != std::string::npos);
 }
