@@ -59,7 +59,7 @@ TEST(TestGame, TestExitWithNoBalance) {
 TEST(TestGame, TestExitWithProfit) {
     Game game;
     game.player.currentscore += 17; // Simulate winning score
-    game.player.currentbet= 50; // Place a bet
+    game.player.currentbet = 50; // Place a bet
     game.player.getPayout(); // Calculate payout
 
     std::ostringstream output; // Capture output
