@@ -7,6 +7,7 @@
 #include "PWallet.hpp"
 #include <limits>
 #include <iostream>
+#include "Player.hpp"
 
 TEST(TestPlayer, defaultConstructorTest) {
     Player Steve;
