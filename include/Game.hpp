@@ -21,10 +21,10 @@
  */
 class Game {
  public:
-  Game();
   /**
    * @brief Default constructor for Game. Initializes game components.
    */
+  Game();
 
   /**
    * @brief Destructor for Game.
