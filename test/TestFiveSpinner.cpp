@@ -12,3 +12,11 @@ TEST(TestFiveSpinner, TestSpinRange) {
     EXPECT_LE(result, 5); //verify our result is less than 5
     EXPECT_GE(result, 2); //verify our result is greater than 2
 }
+
+TEST(TestFiveSpinner, TestHighStakesBias) {
+    FiveSpinner Spinner;
+    int result = Spinner.LowStakes(4);
+
+    EXPECT_LT(result, 4); //verify our result is less than 4
+    EXPECT_GT(result, 1); //verify our result is greater than 1
+}
