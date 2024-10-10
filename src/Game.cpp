@@ -81,7 +81,7 @@ void Game::SelectSpinner() {
 void Game::Hit() {
     int input;
 
-    std::cout<< "Your current score is: " << player.currentscore << "\n";
+    std::cout<< "\nYour current score is: " << player.currentscore << "\n";
 
     while (true) {
         std::cout << "Would you like to spin?\n";
