@@ -34,8 +34,9 @@ class Payout {
 
     /**
      * @brief calculatePayout takes the playerScroe and betAmout 
-     * which will compare against the map 
-     * and comapre with the keys to see if the result is correct
+     * and compare with the keys to see if the result is correct
+     * @param playerScore int
+     * @param betAmout double
     */
     double calculatePayout(int playerScore, double betAmout);
 };

@@ -41,6 +41,11 @@ TEST(PayoutTest, testPayout7) {
     EXPECT_EQ(40, p.calculatePayout(17, 20));
 }
 
+TEST(PayoutTest, testPayout8) {
+    Payout p;
+    EXPECT_EQ(0.0, p.calculatePayout(18,20));
+}
+
 
 
 
