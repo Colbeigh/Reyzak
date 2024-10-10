@@ -18,7 +18,8 @@ TEST(TestPlayer, defaultConstructorTest) {
 TEST(TestPlayer, placeBetTest) {
     Player Steve;
     Steve.placeBet();
-    EXPECT_THROW("A", "Invalid, Please enter a number\n");
+    EXPECT_EQ(Steve.currentbet = -1 , "Invalid Entry");
+
 }
 
 TEST(TestPlayer, BustTest) {
