@@ -2,6 +2,7 @@
 #define SPINNER_0TO7_HPP_INCLUDED
 
 #include "Spinner.hpp"
+#include <string>
 
 /**
  * @class Spinner_0to7 Spinner_0to7.hpp "Spinner_0to7.hpp"

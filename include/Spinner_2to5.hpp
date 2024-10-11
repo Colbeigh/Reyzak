@@ -2,6 +2,7 @@
 #define SPINNER_2TO5_HPP
 
 #include "Spinner.hpp"
+#include <string>
 
 /**
  * @class Spinner_2to5 Spinner_2to5.hpp "Spinner_2to5.hpp"
