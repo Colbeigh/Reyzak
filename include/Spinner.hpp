@@ -6,7 +6,6 @@
 #ifndef SPINNER_H
 #define SPINNER_H
 
-#include <string>
 #include "MakeRandomInt.hpp"
 #include <iostream>
 #include <string>
