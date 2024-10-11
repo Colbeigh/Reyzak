@@ -4,18 +4,13 @@
 */
 #include "Player.hpp"
 
-//Parameters:
 Player::Player() {
 currentbet = 0.0;
 currentscore = 0;
 PWallet Wallet;
 }
 
-//Parameters
 void Player:: placeBet() {
-currentbet = 0.0;
-currentscore = 0;
-
 while(true) {
 std::cout << "Place your bet:";
 std::cin >> currentbet;
