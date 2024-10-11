@@ -35,8 +35,12 @@ TEST(TestPlayer, getBalanceTest) {
 TEST(TestPlayer, getPayoutTest) {
     Player Steve;
     Payout Pay;
-    Pay.calculatePayout(0, 0);
-    EXPECT_EQ(Steve.getPayout(), 50);
-    Pay.calculatePayout(12, 50);
-    EXPECT_EQ(Steve.getPayout(), 62.5);
+    Steve.currentscore = 0;
+    Steve.currentbet = 0.0;
+    Steve.getPayout();
+    EXPECT_EQ(Steve.getBalance(), 50);
+    Steve.currentscore = 12;
+    Steve.currentbet = 50;
+    Steve.getPayout();
+    EXPECT_EQ(Steve.getBalance(), 62.5);
 }
