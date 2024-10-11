@@ -3,12 +3,12 @@
  * @date 2024-10
  */
 
-#include "0to7_Spinner.hpp"
+#include "Spinner_0to7.hpp"
 #include "MakeRandomInt.hpp"
 #include <string>
 
 
-int SevenSpinner::spin(std::string Stakes) {
+int Spinner_0to7::spin(std::string Stakes) {
   MakeRandomInt* rng = MakeRandomInt::getInstance();
   int guess = rng->getValue(8);
 
@@ -21,7 +21,7 @@ int SevenSpinner::spin(std::string Stakes) {
   return guess;
 }
 
-int SevenSpinner::LowStakes(int NumberGuessed) {
+int Spinner_0to7::LowStakes(int NumberGuessed) {
   if (NumberGuessed >= 4) {
     MakeRandomInt* rng = MakeRandomInt::getInstance();
     NumberGuessed -= rng->getValue(3) + 1;
@@ -30,7 +30,7 @@ int SevenSpinner::LowStakes(int NumberGuessed) {
   return NumberGuessed;
 }
 
-int SevenSpinner::HighStakes(int NumberGuessed) {
+int Spinner_0to7::HighStakes(int NumberGuessed) {
   MakeRandomInt* rng = MakeRandomInt::getInstance();
   if (NumberGuessed <= 4) {
     NumberGuessed += rng->getValue(3) + 1;
