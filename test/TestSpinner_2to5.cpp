@@ -4,10 +4,10 @@
  */
 #include "gtest/gtest.h"
 
-#include "2to5_Spinner.hpp"
+#include "Spinner_2to5.hpp"
 
-TEST(TestFiveSpinner, TestSpinRange) {
-    FiveSpinner Spinner;
+TEST(TestSpinner_2to5, TestSpinRange) {
+    Spinner_2to5 Spinner;
     for (int i = 0; i < 10; i++) {
         int result = Spinner.spin("NONE");
         EXPECT_LE(result, 5);
@@ -15,8 +15,8 @@ TEST(TestFiveSpinner, TestSpinRange) {
     }
 }
 
-TEST(TestFiveSpinner, TestLowStakesBias) {
-    FiveSpinner Spinner;
+TEST(TestSpinner_2to5, TestLowStakesBias) {
+    Spinner_2to5 Spinner;
     int result = Spinner.LowStakes(4);
 
     EXPECT_LT(result, 4);
@@ -28,8 +28,8 @@ TEST(TestFiveSpinner, TestLowStakesBias) {
     EXPECT_GT(result2, 2);
 }
 
-TEST(TestFiveSpinner, TestHighStakesBias) {
-    FiveSpinner Spinner;
+TEST(TestSpinner_2to5, TestHighStakesBias) {
+    Spinner_2to5 Spinner;
     int result = Spinner.HighStakes(3);
 
     EXPECT_LE(result, 5);
@@ -42,8 +42,8 @@ TEST(TestFiveSpinner, TestHighStakesBias) {
     int result3 = Spinner.HighStakes(4);
     EXPECT_EQ(result3, 4);
 }
-TEST(TestFiveSpinner, TestHighStakesMultipleSpins) {
-    FiveSpinner Spinner;
+TEST(TestSpinner_2to5, TestHighStakesMultipleSpins) {
+    Spinner_2to5 Spinner;
     for (int i = 0; i < 10; i++) {
         int result = Spinner.spin("High");
         EXPECT_LE(result, 5);
@@ -51,8 +51,8 @@ TEST(TestFiveSpinner, TestHighStakesMultipleSpins) {
     }
 }
 
-TEST(TestFiveSpinner, TestLowStakesMultipleSpins) {
-    FiveSpinner Spinner;
+TEST(TestSpinner_2to5, TestLowStakesMultipleSpins) {
+    Spinner_2to5 Spinner;
     for (int i =0; i <10; i++) {
         int result = Spinner.spin("Low");
         EXPECT_LE(result, 5);

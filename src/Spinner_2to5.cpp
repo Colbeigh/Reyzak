@@ -3,13 +3,13 @@
  * @date 2024-10
  */
 
-#include "2to5_Spinner.hpp"
+#include "Spinner_2to5.hpp"
 #include "MakeRandomInt.hpp"
 #include <iostream>
 #include <string>
 
 
-int FiveSpinner::spin(std::string Stakes) {
+int Spinner_2to5::spin(std::string Stakes) {
   MakeRandomInt* rng = MakeRandomInt::getInstance();
   int NumberSpin;
   NumberSpin = rng->getValue(4) + 2;
@@ -23,7 +23,7 @@ int FiveSpinner::spin(std::string Stakes) {
   return NumberSpin;
 }
 
-int FiveSpinner::HighStakes(int NumberGuessed) {
+int Spinner_2to5::HighStakes(int NumberGuessed) {
   MakeRandomInt* rng = MakeRandomInt::getInstance();
   if (NumberGuessed <= 3) {
     NumberGuessed += rng->getValue(2) + 1;
@@ -32,7 +32,7 @@ int FiveSpinner::HighStakes(int NumberGuessed) {
   return NumberGuessed;
 }
 
-int FiveSpinner::LowStakes(int NumberGuessed) {
+int Spinner_2to5::LowStakes(int NumberGuessed) {
   MakeRandomInt* rng = MakeRandomInt::getInstance();
   if (NumberGuessed >= 4) {
     NumberGuessed -= rng->getValue(2) + 1;

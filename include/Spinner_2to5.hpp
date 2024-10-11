@@ -1,15 +1,15 @@
-#ifndef TWOTOFIVESPINNER_HPP
-#define TWOTOFIVESPINNER_HPP
+#ifndef SPINNER_2TO5_HPP
+#define SPINNER_2TO5_HPP
 
 #include "Spinner.hpp"
 #include "MakeRandomInt.hpp"
 #include <string>
 
 /**
- * @class FiveSpinner 2to5_Spinner.hpp "2to5_Spinner.hpp"
+ * @class Spinner_2to5 Spinner_2to5.hpp "Spinner_2to5.hpp"
  * @brief An inherited class that applies polymorphism on spin and Stakes functionality within the range 2-5
  */
-class FiveSpinner : public Spinner {
+class Spinner_2to5 : public Spinner {
  public:
   /**
    * @brief returns a random number from within the range

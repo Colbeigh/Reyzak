@@ -63,11 +63,11 @@ void Game::selectSpinner() {
         }
 
         if (input == 1) {
-            current_spinner = new FiveSpinner();
+            current_spinner = new Spinner_2to5();
             std::cout << "You have selected the 2 to 5 spinner!\n";
             break;
         } else if (input == 2) {
-            current_spinner = new SevenSpinner();
+            current_spinner = new Spinner_0to7();
             std::cout << "You have selected the 0 to 7 spinner!\n";
             break;
         } else if (input == 3) {
