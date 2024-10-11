@@ -25,9 +25,13 @@ class Spinner {
      * @brief Pure virtual function for the spin method
      */
   virtual int spin(std::string Stakes) = 0;
-
+   /**
+    * @brief Pure virtual function for the LowStakes Method
+    */
   virtual int LowStakes(int NumberGuessed) = 0;
-
+   /**
+    * @brief Pure virtual function for the HighStakes method
+    */
   virtual int HighStakes(int NumberGuessed) = 0;
 };
 
