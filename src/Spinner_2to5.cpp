@@ -4,10 +4,6 @@
  */
 
 #include "Spinner_2to5.hpp"
-#include "MakeRandomInt.hpp"
-#include <iostream>
-#include <string>
-
 
 int Spinner_2to5::Spin(std::string Stakes) {
   MakeRandomInt* rng = MakeRandomInt::getInstance();

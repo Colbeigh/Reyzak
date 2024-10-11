@@ -7,7 +7,9 @@
 #define SPINNER_H
 
 #include <string>
-
+#include "MakeRandomInt.hpp"
+#include <iostream>
+#include <string>
 
 /**
  * @brief a base class for Spinner Objects
