@@ -36,6 +36,6 @@ TEST(TestPlayer, getPayoutTest) {
     Player Steve;
     Pay.calculatePayout(0, 0);
     EXPECT_EQ(Steve.getPayout(), 50);
-    Pay.calculatePayout(12,50);
+    Pay.calculatePayout(12, 50);
     EXPECT_EQ(Steve.getPayout(), 62.5);
 }
