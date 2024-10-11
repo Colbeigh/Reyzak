@@ -113,7 +113,7 @@ void Game::Hit() {
 
 void Game::Exit() {
     std::cout << "Thank's for playing!\n";
-    std::cout << "You left the table with $"<< player.getBalance();
+    std::cout << "You left the table with $" << player.getBalance();
     std::cout << " Zephy\n";
 
     if (player.getBalance() <= 0.0) {
