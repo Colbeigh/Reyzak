@@ -8,7 +8,7 @@ Members
 Todd Across The Mountain - Spinner.hpp, Spinner.cpp, Spinner_0to7.hpp, Spinner_0to7.cpp, TestSpinner_0to7.cpp, 
 Spinner_0to5.cpp, Spinner_0to5.cpp and TestSpinner_0to7.cpp
 
-Nikita Evtushenko - Payout.hpp, Payout.cpp and TestPayout
+Nikita Evtushenko - Payout.hpp, Payout.cpp and TestPayout.cpp
 
 Colby Hanna - main.cpp, Game.hpp, Game.cpp and TestGame.hpp
 
