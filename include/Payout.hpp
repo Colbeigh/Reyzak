@@ -33,8 +33,8 @@ class Payout {
     std::map<int, float> mapPayout;
 
     /**
-     * @brief calculatePayout takes the playerScroe and betAmout 
-     * and compare with the keys to see if the result is correct
+     * @brief calculatePayout takes the playerScore and betAmout 
+     * and compares with the keys to see if the result is correct
      * @param playerScore int
      * @param betAmout double
     */
