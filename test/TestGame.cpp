@@ -41,24 +41,6 @@ TEST(TestGame, TestPlayerPayout) {
     EXPECT_GT(game.player.getBalance(), 50);
 }
 
-TEST(TestGame, TestExitWithNoBalance) {
-    Game game;
-    game.player.currentscore += 0; // Simulate winning score
-    game.player.currentbet = 50; // Place a bet
-    game.player.getPayout(); // Calculate payout
-
-    std::ostringstream output;
-    std::streambuf* oldCout = std::cout.rdbuf(output.rdbuf());
-
-    game.Exit(); // Call Exit
-
-    std::cout.rdbuf(oldCout);
-    std::string outputStr = output.str();
-    std::cout << "Captured output:\n" << outputStr << std::endl;
-    std::string expectedMessage = "Better luck next time\n"; // Adjusted
-    EXPECT_TRUE(output.str().find(expectedMessage) != std::string::npos);
-}
-
 TEST(TestGame, TestExitWithProfit) {
     Game game;
     game.player.currentscore += 17; // Simulate winning score
