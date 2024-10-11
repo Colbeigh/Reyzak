@@ -11,11 +11,11 @@ PWallet Wallet;
 }
 
 void Player:: placeBet() {
-    while(true) {
+    while (true) {
         std::cout << "Place your bet:";
         std::cin >> currentbet;
 
-    if(std::cin.fail()) {
+    if (std::cin.fail()) {
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<
         std::streamsize>::max(), '\n');
@@ -33,7 +33,7 @@ void Player:: placeBet() {
 }
 
 bool Player::Bust() {
-    if(currentscore >= 17) {
+    if (currentscore >= 17) {
         return true;
     } else {return false;
         }
