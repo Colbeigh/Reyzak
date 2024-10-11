@@ -4,9 +4,6 @@
  */
 
 #include "Spinner_0to7.hpp"
-#include "MakeRandomInt.hpp"
-#include <string>
-
 
 int Spinner_0to7::spin(std::string Stakes) {
   MakeRandomInt* rng = MakeRandomInt::getInstance();

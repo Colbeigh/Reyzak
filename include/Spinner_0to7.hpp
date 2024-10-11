@@ -4,7 +4,7 @@
 #include "Spinner.hpp"
 #include <iostream>
 #include <string>
-
+#include "MakeRandomInt.hpp"
 /**
  * @class Spinner_0to7 Spinner_0to7.hpp "Spinner_0to7.hpp"
  * @brief an inherited class that applies polymorphism on spin and stakes functionality within the range of 0-7
