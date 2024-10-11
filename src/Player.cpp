@@ -11,31 +11,32 @@ PWallet Wallet;
 }
 
 void Player:: placeBet() {
-while(true) {
-std::cout << "Place your bet:";
-std::cin >> currentbet;
-if(std::cin.fail()) {
-    std::cin.clear();
-    std::cin.ignore(std::numeric_limits<
-    std::streamsize>::max(), '\n');
-    std::cout <<"Invalid, Please enter a number\n";
-} else if (currentbet <= 0) {
-    std::cout << "Invalid Entry" << std::endl;
-} else if (currentbet > Wallet.checkBalance()) {
-    std::cout << "Insufficient Funds" << std::endl;
-} else {
-std::cout << "You've placed: $" << currentbet << " to bet!\n";
-Wallet.removeZephy(currentbet);
-break;
-}
-}
+    while(true) {
+        std::cout << "Place your bet:";
+        std::cin >> currentbet;
+
+    if(std::cin.fail()) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<
+        std::streamsize>::max(), '\n');
+        std::cout <<"Invalid, Please enter a number\n";
+    } else if (currentbet <= 0) {
+        std::cout << "Invalid Entry" << std::endl;
+    } else if (currentbet > Wallet.checkBalance()) {
+        std::cout << "Insufficient Funds" << std::endl;
+    } else {
+        std::cout << "You've placed: $" << currentbet << " to bet!\n";
+        Wallet.removeZephy(currentbet);
+        break;
+        }
+    }
 }
 
 bool Player::Bust() {
-if(currentscore >= 17) {
-return true;
-} else {return false;
-}
+    if(currentscore >= 17) {
+        return true;
+    } else {return false;
+        }
 }
 
 double Player::getBalance() {
@@ -45,6 +46,7 @@ double Player::getBalance() {
 
 void Player::getPayout() {
     currentbet = Pay.calculatePayout(currentscore, currentbet);
+
     if (currentbet > 0) {
         Wallet.addZephy(currentbet);
     }

@@ -15,9 +15,6 @@ TEST(TestPlayer, defaultConstructorTest) {
     EXPECT_EQ(Steve.currentscore, 0);
 }
 
-TEST(TestPlayer, placeBetTest) {
-}
-
 TEST(TestPlayer, BustTest) {
     Player Steve;
     Steve.currentscore = 17;
@@ -27,6 +24,7 @@ TEST(TestPlayer, BustTest) {
     Steve.currentscore = 16;
     EXPECT_FALSE(Steve.Bust());
 }
+
 TEST(TestPlayer, getBalanceTest) {
     Player Steve;
     EXPECT_EQ(Steve.getBalance(), 50);
