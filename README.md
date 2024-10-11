@@ -1,21 +1,15 @@
-# Template for CPSC2720 Two Week Project
+Cpsc 2720 Two Week Project
 
-Last Updated: 2024.09.16 by Nicole Wilson [n.wilson@uleth.ca]
+Last Updated: 2024.10.11 by Colby Hanna [Colby.Hanna@uleth.ca]
 
-Notes:
+Please check our Test branch to see the history of majority of commits over the course of this project.
 
-* The Makefile and .gitlab-ci.yml files are provided.
-* The .gitlab-ci.yml file uses the targets in the Makefile.
-* These are the tools/commands/apps used:
-  * Compiler: g++ 
-  * Style Check: cpplint
-  * Static Check: cppcheck
-  * Memory Check: valgrind
-* Use `make version` to see the versions of the tools.
+Members
+Todd Across The Mountain - Spinner.hpp, Spinner.cpp, Spinner_0to7.hpp, Spinner_0to7.cpp, TestSpinner_0to7.cpp, 
+Spinner_0to5.cpp, Spinner_0to5.cpp and TestSpinner_0to7.cpp
 
-Certain assumptions have been made:
-* One repo contains the files for one project.
-* All header files for the project are found in <code>include/</code> and named <code>*.hpp</code>, every class must have a header file.
-* All project source files for the project are named <code>*.cpp</code>.
-  * Any needed source files that correspond to header files are found in <code>src/</code>.
-  * There is a <code>main.cpp</code> found in <code>src/project/</code>.
+Nikita Evtushenko - Payout.hpp, Payout.cpp and TestPayout
+
+Colby Hanna - main.cpp, Game.hpp, Game.cpp and TestGame.hpp
+
+Jem Pineda - Player.hpp, Player.cpp and TestPlayer.cpp
