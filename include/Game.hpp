@@ -7,8 +7,8 @@
 
 #include "Player.hpp"
 #include "Spinner.hpp"
-#include "2to5_Spinner.hpp"
-#include "0to7_Spinner.hpp"
+#include "Spinner_2to5.hpp"
+#include "Spinner_0to7.hpp"
 
 #include <iostream>
 #include <cctype>
