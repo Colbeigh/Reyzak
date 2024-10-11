@@ -21,7 +21,7 @@ void Game::Start() {
         player.currentscore = 0;
         player.placeBet();
         Stakes(player.currentbet);
-        SelectSpinner();
+        selectSpinner();
             while (player.Bust() == false && isgambling == true) {
                 Hit();
             }
@@ -42,7 +42,7 @@ void Game::Stakes(int bet) {
   }
 
 
-void Game::SelectSpinner() {
+void Game::selectSpinner() {
     int input;
 
     while (true) {

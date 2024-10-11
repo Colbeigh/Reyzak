@@ -1,3 +1,6 @@
+/**
+ * main.cpp created by Colby Hanna (Colby.Hanna@uleth.ca) on 2024-09-29
+ */
 #include <gtest/gtest.h>
 #include "Game.hpp"
 #include "Player.hpp"  // Ensure you include the Player's header

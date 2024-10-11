@@ -58,7 +58,7 @@ class Game {
   /**
    * @brief Selects a spinner for the game.
    */
-  void SelectSpinner();
+  void selectSpinner();
 
   /**
    * @brief Processes the "hit" action during the game.
