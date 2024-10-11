@@ -7,7 +7,7 @@
 
 TEST(TestPWallet, defaultConstructorTest) {
     PWallet Wallet;
-    EXPECT_EQ(Wallet.zephy, 50);
+    EXPECT_EQ(Wallet.checkBalance, 50);
 }
 
 TEST(TestPWallet, checkBalanceTest) {
@@ -17,12 +17,16 @@ TEST(TestPWallet, checkBalanceTest) {
 
 TEST(TestPWallet, addZephyTest) {
     PWallet Wallet;
-    EXPECT_EQ(Wallet.addZephy(0), 50);
-    EXPECT_EQ(Wallet.addZephy(10), 60);
+    Wallet.addZephy(0);
+    EXPECT_EQ(Wallet.checkBalance(), 50);
+    Wallet.addZephy(10);
+    EXPECT_EQ(Wallet.checkBalance(), 60);
 }
 
 TEST(TestPWallet, removeZephyTest) {
     PWAllet Wallet;
-    EXPECT_EQ(Wallet.removeZephy(0), 50);
-    EXPECT_EQ(Wallet.removeZephy(10), 40);
+    Wallet.removeZephy(0);
+    EXPECT_EQ(Wallet.checkBalance(), 50);
+    Wallet.removeZephy(10);
+    EXPECT_EQ(Wallet.checkBalance(), 40);
 }
