@@ -10,8 +10,8 @@ TEST(TestFiveSpinner, TestSpinRange) {
     FiveSpinner Spinner;
     for (int i = 0; i < 10; i++) {
         int result = Spinner.spin("NONE");
-        EXPECT_LE(result, 5); //verify our result is less than 5
-        EXPECT_GE(result, 2); //verify our result is greater than 2
+        EXPECT_LE(result, 5);
+        EXPECT_GE(result, 2);
     }
 }
 
@@ -19,8 +19,8 @@ TEST(TestFiveSpinner, TestLowStakesBias) {
     FiveSpinner Spinner;
     int result = Spinner.LowStakes(4);
 
-    EXPECT_LT(result, 4); //verify our result is less than 4
-    EXPECT_GT(result, 1); //verify our result is greater than 1
+    EXPECT_LT(result, 4);
+    EXPECT_GT(result, 1);
 
     int result2 = Spinner.LowStakes(5);
 
@@ -46,8 +46,8 @@ TEST(TestFiveSpinner, TestHighStakesMultipleSpins) {
     FiveSpinner Spinner;
     for (int i = 0; i < 10; i++) {
         int result = Spinner.spin("High");
-        EXPECT_LE(result, 5); //verify our result is less than 5
-        EXPECT_GE(result, 2); //verify our result is greater than 2
+        EXPECT_LE(result, 5); 
+        EXPECT_GE(result, 2); 
     }
 }
 
@@ -55,7 +55,7 @@ TEST(TestFiveSpinner, TestLowStakesMultipleSpins) {
     FiveSpinner Spinner;
     for (int i =0; i <10; i++) {
         int result = Spinner.spin("Low");
-        EXPECT_LE(result, 5); //verify our result is less than 5
-        EXPECT_GE(result, 2); //verify our result is greater than 2
+        EXPECT_LE(result, 5); 
+        EXPECT_GE(result, 2); 
     }
 }
