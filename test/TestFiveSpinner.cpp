@@ -46,8 +46,8 @@ TEST(TestFiveSpinner, TestHighStakesMultipleSpins) {
     FiveSpinner Spinner;
     for (int i = 0; i < 10; i++) {
         int result = Spinner.spin("High");
-        EXPECT_LE(result, 5); 
-        EXPECT_GE(result, 2); 
+        EXPECT_LE(result, 5);
+        EXPECT_GE(result, 2);
     }
 }
 
@@ -55,7 +55,7 @@ TEST(TestFiveSpinner, TestLowStakesMultipleSpins) {
     FiveSpinner Spinner;
     for (int i =0; i <10; i++) {
         int result = Spinner.spin("Low");
-        EXPECT_LE(result, 5); 
-        EXPECT_GE(result, 2); 
+        EXPECT_LE(result, 5);
+        EXPECT_GE(result, 2);
     }
 }
