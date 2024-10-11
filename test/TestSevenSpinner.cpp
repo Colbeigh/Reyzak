@@ -47,3 +47,19 @@ TEST(TestSevenSpinner, TestHighStakesBias) {
     int result3 = Spinner.HighStakes(6);
     EXPECT_EQ(result3, 6);
 }
+
+TEST(TestSevenSpinner, TestLowStakesBias) {
+    SevenSpinner Spinner;
+    int result = Spinner.LowStakes(4);
+
+    EXPECT_LT(result, 4);
+    EXPECT_GE(result, 1);
+
+    int result2 = Spinner.LowStakes(7);
+
+    EXPECT_LT(result2, 7);
+    EXPECT_GE(result2, 4);
+
+    int result3 = Spinner.LowStakes(3);
+    EXPECT_EQ(result3, 3);
+}
