@@ -19,7 +19,7 @@ if(std::cin.fail()) {
     std::cin.ignore(std::numeric_limits<
     std::streamsize>::max(), '\n');
     std::cout <<"Invalid, Please enter a number\n";
-} else if (currentbet < 0) {
+} else if (currentbet <= 0) {
     std::cout << "Invalid Entry" << std::endl;
 } else if (currentbet > Wallet.checkBalance()) {
     std::cout << "Insufficient Funds" << std::endl;
