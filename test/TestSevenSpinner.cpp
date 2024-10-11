@@ -8,7 +8,27 @@
 
 TEST(TestSevenSpinner, TestSpinRange) {
     SevenSpinner Spinner;
-    int result = Spinner.spin("NONE");
-    EXPECT_LE(result, 7); //verify our result is less than 7
-    EXPECT_GE(result, 0); //verify our result is greater than 0
+    for (int i = 0; i < 10; i++) {
+        int result = Spinner.spin("NONE");
+        EXPECT_LE(result, 7); //verify our result is less than 7
+        EXPECT_GE(result, 0); //verify our result is greater than 0
+    }
+}
+
+TEST(TestSevenSpinner, TestHighStakesMultipleSpins) {
+    SevenSpinner Spinner;
+    for (int i = 0; i < 10; i++) {
+        int result = Spinner.spin("High");
+        EXPECT_LE(result, 7); //verify our result is less than 7
+        EXPECT_GE(result, 0); //verify our result is greater than 0
+    }
+}
+
+TEST(TestSevenSpinner, TestLowStakesMultipleSpins) {
+    SevenSpinner Spinner;
+    for (int i = 0; i < 10; i++) {
+        int result = Spinner.spin("Low");
+        EXPECT_LE(result, 7); //verify our result is less than 7
+        EXPECT_GE(result, 0); //verify our result is greater than 0
+    }
 }
