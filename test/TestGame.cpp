@@ -3,8 +3,8 @@
  */
 #include <gtest/gtest.h>
 #include "Game.hpp"
-#include "Player.hpp"  // Ensure you include the Player's header
-#include "Spinner.hpp" // Ensure you include the Spinner's header
+#include "Player.hpp"
+#include "Spinner.hpp"
 #include <sstream>
 #include <iostream>
 
@@ -20,42 +20,42 @@ TEST(TestGame, TestInitialBalance) {
 
 TEST(TestGame, TestStakesLow) {
     Game game;
-    game.Stakes(10); // Test with a low bet
+    game.Stakes(10);
     EXPECT_EQ(game.stakes, "Low");
 }
 
 TEST(TestGame, TestStakesMedium) {
     Game game;
-    game.Stakes(30); // Test with a medium bet
+    game.Stakes(30);
     EXPECT_EQ(game.stakes, "Medium");
 }
 
 TEST(TestGame, TestStakesHigh) {
     Game game;
-    game.Stakes(50); // Test with a high bet
+    game.Stakes(50);
     EXPECT_EQ(game.stakes, "High");
 }
 
 TEST(TestGame, TestPlayerPayout) {
     Game game;
-    game.player.currentscore += 17; // Simulating a spin that wins
-    game.player.currentbet = 20; // Set bet
+    game.player.currentscore += 17;
+    game.player.currentbet = 20;
     game.player.getPayout();
     EXPECT_GT(game.player.getBalance(), 50);
 }
 
 TEST(TestGame, TestExitWithProfit) {
     Game game;
-    game.player.currentscore += 17; // Simulate winning score
-    game.player.currentbet = 50; // Place a bet
-    game.player.getPayout(); // Calculate payout
+    game.player.currentscore += 17;
+    game.player.currentbet = 50;
+    game.player.getPayout();
 
-    std::ostringstream output; // Capture output
+    std::ostringstream output;
     std::streambuf* oldCout = std::cout.rdbuf(output.rdbuf());
 
-    game.Exit(); // Call Exit
+    game.Exit()
 
-    std::cout.rdbuf(oldCout); // Reset cout
-    std::string expectedMessage = "You made a $"; // Adjusted
+    std::cout.rdbuf(oldCout);
+    std::string expectedMessage = "You made a $";
     EXPECT_TRUE(output.str().find(expectedMessage) != std::string::npos);
 }
