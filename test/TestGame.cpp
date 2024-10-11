@@ -53,7 +53,7 @@ TEST(TestGame, TestExitWithProfit) {
     std::ostringstream output;
     std::streambuf* oldCout = std::cout.rdbuf(output.rdbuf());
 
-    game.Exit()
+    game.Exit();
 
     std::cout.rdbuf(oldCout);
     std::string expectedMessage = "You made a $";
