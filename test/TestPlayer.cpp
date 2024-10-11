@@ -16,15 +16,25 @@ TEST(TestPlayer, defaultConstructorTest) {
 }
 
 TEST(TestPlayer, placeBetTest) {
-    Player Steve;
-    Steve.placeBet();
-    EXPECT_EQ(Steve.currentbet = -1 , "Invalid Entry");
 }
 
 TEST(TestPlayer, BustTest) {
+    Player Steve;
+    Steve.currentscore = 17;
+    EXPECT_TRUE(Steve.Bust());
+    Steve.currentscore = 18;
+    EXPECT_TRUE(Steve.Bust());
+    Steve.currentscore = 16;
+    EXPECT_FALSE(Steve.Bust());
 }
 TEST(TestPlayer, getBalanceTest) {
+    Player Steve;
+    EXPECT_EQ(Steve.getBalance(), 50);
 }
 
 TEST(TestPlayer, getpayoutTest) {
+    Player Steve;
+    Steve.currentscore = 0;
+    Steve.currentbet = 0;
+    EXPECT_EQ(Steve.getpayoutTest(), 50);
 }
