@@ -19,7 +19,7 @@ class Spinner_2to5 : public Spinner {
    * @param Stakes string parsed from game to determine the stakes given by the player
    * @return Random number from within range and manipulated depending on Stakes Bias
    */
-  int spin(std::string Stakes) override;
+  int Spin(std::string Stakes) override;
 
   /**
    * @brief Manipulates NumberGuessed by Spinner to bias higher numbers if stakes are high and guess is low

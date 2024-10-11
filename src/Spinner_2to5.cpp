@@ -9,7 +9,7 @@
 #include <string>
 
 
-int Spinner_2to5::spin(std::string Stakes) {
+int Spinner_2to5::Spin(std::string Stakes) {
   MakeRandomInt* rng = MakeRandomInt::getInstance();
   int NumberSpin;
   NumberSpin = rng->getValue(4) + 2;

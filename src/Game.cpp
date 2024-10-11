@@ -96,7 +96,7 @@ void Game::Hit() {
         }
 
         if (input == 1) {
-            int rndmnum = current_spinner->spin(stakes);
+            int rndmnum = current_spinner->Spin(stakes);
             std::cout << "You spun " << rndmnum << "!\n";
             player.currentscore += rndmnum;
             std::cout << "Your new score is " << player.currentscore << "\n";

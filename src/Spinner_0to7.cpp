@@ -5,7 +5,7 @@
 
 #include "Spinner_0to7.hpp"
 
-int Spinner_0to7::spin(std::string Stakes) {
+int Spinner_0to7::Spin(std::string Stakes) {
   MakeRandomInt* rng = MakeRandomInt::getInstance();
   int guess = rng->getValue(8);
 

@@ -9,7 +9,7 @@
 TEST(TestSpinner_0to7, TestSpinRange) {
     Spinner_0to7 Spinner;
     for (int i = 0; i < 10; i++) {
-        int result = Spinner.spin("NONE");
+        int result = Spinner.Spin("NONE");
         EXPECT_LE(result, 7);
         EXPECT_GE(result, 0);
     }
@@ -18,7 +18,7 @@ TEST(TestSpinner_0to7, TestSpinRange) {
 TEST(TestSpinner_0to7, TestHighStakesMultipleSpins) {
     Spinner_0to7 Spinner;
     for (int i = 0; i < 10; i++) {
-        int result = Spinner.spin("High");
+        int result = Spinner.Spin("High");
         EXPECT_LE(result, 7);
         EXPECT_GE(result, 0);
     }
@@ -27,7 +27,7 @@ TEST(TestSpinner_0to7, TestHighStakesMultipleSpins) {
 TEST(TestSpinner_0to7, TestLowStakesMultipleSpins) {
     Spinner_0to7 Spinner;
     for (int i = 0; i < 10; i++) {
-        int result = Spinner.spin("Low");
+        int result = Spinner.Spin("Low");
         EXPECT_LE(result, 7);
         EXPECT_GE(result, 0);
     }
