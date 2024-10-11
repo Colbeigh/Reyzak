@@ -1,5 +1,5 @@
-#ifndef ZEROTOSEVENSPINNER_H
-#define ZEROTOSEVENSPINNER_H
+#ifndef SPINNER_0TO7_HPP_INCLUDED
+#define SPINNER_0TO7_HPP_INCLUDED
 
 #include "Spinner.hpp"
 #include <iostream>
@@ -9,7 +9,7 @@
  * @class SevenSpinner 0to7_Spinner.hpp "0to7_Spinner.hpp"
  * @brief an inherited class that applies polymorphism on spin and stakes functionality within the range of 0-7
  */
-class SevenSpinner : public Spinner {
+class Spinner_0to7 : public Spinner {
  public:
  /**
   * @brief returns a random number from within the range

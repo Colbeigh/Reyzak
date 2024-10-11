@@ -4,10 +4,10 @@
  */
 #include "gtest/gtest.h"
 
-#include "0to7_Spinner.hpp"
+#include "Spinner_0to7.hpp"
 
-TEST(TestSevenSpinner, TestSpinRange) {
-    SevenSpinner Spinner;
+TEST(TestSpinner_0to7, TestSpinRange) {
+    Spinner_0to7 Spinner;
     for (int i = 0; i < 10; i++) {
         int result = Spinner.spin("NONE");
         EXPECT_LE(result, 7);
@@ -15,8 +15,8 @@ TEST(TestSevenSpinner, TestSpinRange) {
     }
 }
 
-TEST(TestSevenSpinner, TestHighStakesMultipleSpins) {
-    SevenSpinner Spinner;
+TEST(TestSpinner_0to7, TestHighStakesMultipleSpins) {
+    Spinner_0to7 Spinner;
     for (int i = 0; i < 10; i++) {
         int result = Spinner.spin("High");
         EXPECT_LE(result, 7);
@@ -24,8 +24,8 @@ TEST(TestSevenSpinner, TestHighStakesMultipleSpins) {
     }
 }
 
-TEST(TestSevenSpinner, TestLowStakesMultipleSpins) {
-    SevenSpinner Spinner;
+TEST(TestSpinner_0to7, TestLowStakesMultipleSpins) {
+    Spinner_0to7 Spinner;
     for (int i = 0; i < 10; i++) {
         int result = Spinner.spin("Low");
         EXPECT_LE(result, 7);
@@ -33,8 +33,8 @@ TEST(TestSevenSpinner, TestLowStakesMultipleSpins) {
     }
 }
 
-TEST(TestSevenSpinner, TestHighStakesBias) {
-    SevenSpinner Spinner;
+TEST(TestSpinner_0to7, TestHighStakesBias) {
+    Spinner_0to7 Spinner;
     int result = Spinner.HighStakes(4);
 
     EXPECT_LE(result, 7);
@@ -48,8 +48,8 @@ TEST(TestSevenSpinner, TestHighStakesBias) {
     EXPECT_EQ(result3, 6);
 }
 
-TEST(TestSevenSpinner, TestLowStakesBias) {
-    SevenSpinner Spinner;
+TEST(TestSpinner_0to7, TestLowStakesBias) {
+    Spinner_0to7 Spinner;
     int result = Spinner.LowStakes(4);
 
     EXPECT_LT(result, 4);
