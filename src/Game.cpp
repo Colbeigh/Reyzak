@@ -122,7 +122,6 @@ void Game::Exit() {
         std::cout << "You made a $" << player.getBalance() - 50.0;
         std::cout << " profit!\n";
     }
-    isplaying = false;
   }
 
 void Game::Rules() {
@@ -162,6 +161,8 @@ void Game::Playing() {
 
         if (input == 1) {
             isgambling = true;
+            player.currentbet = 0;
+            player.currentscore = 0;
             break;
         } else if (input == 2) {
             std::cout << "Exiting\n";
