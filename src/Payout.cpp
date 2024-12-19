@@ -1,5 +1,9 @@
+/**
+ * Payout.cpp create by Nikita Evtushenko (nikita.evtushenko@uleth.ca) on 2024-09-29
+ * @author Nikita Evtushenko
+ * @date 2024-09-29
+*/
 #include "Payout.hpp"
-#include <iostream>
 
 Payout::Payout() {
     mapPayout = {
@@ -12,25 +16,21 @@ Payout::Payout() {
     };
 }
 
-Payout::~Payout() {}; // Don't know if we need this for payout
+Payout::~Payout() {}
 
-int Payout::calculatePayout(int playerScore, int betAmout) {
-
+double Payout::calculatePayout(int playerScore, double betAmout) {
     auto it = mapPayout.find(playerScore);
 
     if (it != mapPayout.end()) {
-        
         double multiplayer = it -> second;
-        int payout = betAmout * multiplayer;
+        double payout = betAmout * multiplayer;
 
-        std::cout << "The payout Amount" << payout << std::endl;
+        std::cout << "The payout amount is: $" << payout << std::endl;
 
         return payout;
 
-    } else { 
+    } else {
         std::cout << "No payout Player Score is: " << playerScore << std::endl;
+        return 0.0;
     }
-
-    
-    
-};
+}

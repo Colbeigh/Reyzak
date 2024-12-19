@@ -1,36 +1,49 @@
-//Player Class
-//Author: Jem
-
+/**
+ * @author Jem Pineda <j.pineda@uleth.ca>
+ * @date Fall 2024
+*/
 #include "Payout.hpp"
 #include "PWallet.hpp"
+#include <limits>
+#include <iostream>
 #ifndef PLAYER_HPP_INCLUDED
 #define PLAYER_HPP_INCLUDED
-
-class Player
-
-{
-  
+/**
+ * @class Player Player.hpp "Player.hpp"
+ * @brief Handles scores, placing bets and returns payout.
+ */
+class Player{
  public:
-  //Constructors
+ /**
+  * @brief Default constructor that Initializes bet and scores values.
+  */
   Player();
-
-  Player(int &pScore, double &pBet, PWallet Wallet);
-
-  //Deconstructors
-  ~Player();
-
-  
-  void placeBet(double amount);
-
+  /**
+  * @brief Accepts user input to place a bet and
+  * remove currency appropriately.
+  */
+  void placeBet();
+  /**
+  * @brief Determines whether the score has hit above 17.
+  * @return true if score is greater than 17, false otherwise
+  */
   bool Bust();
+  /**
+  * @brief Access currency
+  * @return the currency 
+  */
+  double getBalance();
+  /**
+  * @brief Access the payout
+  * @return the payout
+  */
+  void getPayout();
+  int currentscore;
+  double currentbet;
 
-  int getScore();
-
-private:
+ private:
+Payout Pay;
 PWallet Wallet;
-int* currentScore;
-int* currentBet;
-
-  };
+};
 
 #endif //PLAYER_HPP_INCLUDED

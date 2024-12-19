@@ -6,30 +6,34 @@
 #ifndef SPINNER_H
 #define SPINNER_H
 
+#include "MakeRandomInt.hpp"
+#include <iostream>
+#include <string>
+
 /**
  * @brief a base class for Spinner Objects
  */
 class Spinner {
  public:
     /**
-     * @brief Constructor, sets min and max range to 0
+     * @brief Constructor
      */
   Spinner();
 
+  virtual ~Spinner();
+
    /**
-     * @brief this method should be overridden in enherited classes, currently returns 0
+     * @brief Pure virtual function for the spin method
      */
-  virtual int spin(std::string Stakes);
-
+  virtual int Spin(std::string Stakes) = 0;
    /**
-    * @brief sets our range
-    * @param minRange int value for lower part of range
-    * @param maxRange int value for higher part of range
+    * @brief Pure virtual function for the LowStakes Method
     */
-  void setRange(int minRange, int maxRange);
-
- private:
-  int min_Range, max_Range;
+  virtual int LowStakes(int NumberGuessed) = 0;
+   /**
+    * @brief Pure virtual function for the HighStakes method
+    */
+  virtual int HighStakes(int NumberGuessed) = 0;
 };
 
 #endif

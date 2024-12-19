@@ -1,69 +1,54 @@
 /**
-Author: Jem Pineda
-Dates:
-
- */
-/**
-want:
-target in bool and player
-current bet public
-const static_cast from int to double
-
-
- */
-
-#include <iostream>
-#include "PWallet.hpp"
+ * @author Jem Pineda <j.pineda@uleth.ca>
+ * @date Fall 2024
+*/
 #include "Player.hpp"
-#include "Payout.hpp"
 
-//Parameters, Player 
-Player::Player(int &pScore, double &pBet, PWallet Wallet){
-pScore = 0;
-pBet = 0;
-*currentScore = pScore;
-*currentBet = pBet; 
-
+Player::Player() {
+currentbet = 0.0;
+currentscore = 0;
+PWallet Wallet;
 }
-/**
- *
- *
- */
-int Player::getScore(){
-    if(*currentScore <= 0){
-        std::cout << "Player currently has no scores" << std::endl;
+
+void Player:: placeBet() {
+    while (true) {
+        std::cout << "Place your bet:";
+        std::cin >> currentbet;
+
+    if (std::cin.fail()) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<
+        std::streamsize>::max(), '\n');
+        std::cout <<"Invalid, Please enter a number\n";
+    } else if (currentbet <= 0) {
+        std::cout << "Invalid Entry" << std::endl;
+    } else if (currentbet > Wallet.checkBalance()) {
+        std::cout << "Insufficient Funds" << std::endl;
+    } else {
+        std::cout << "You've placed: $" << currentbet << " to bet!\n";
+        Wallet.removeZephy(currentbet);
+        break;
+        }
     }
-    else{
-    return *currentScore;
-}
-return *currentScore;
 }
 
-//Parameters, interger amount for bet
-void Player:: placeBet(double amount){
-amount = 0;
-*currentScore = 0;
-*currentBet =  static_cast<double>(amount);
-std::cout << "Place your bet:";
-std::cin >> amount;
-if(amount <= 0){
- std::cout << "???" << std::endl;
-}
-else if(amount > Wallet.checkBalance()){
-    std::cout << "Insufficient Funds" << std::endl;
-}
-else 
-{
-*currentBet = amount;
-std::cout << "You've placed: $" << currentBet << "to bet!" << std::endl;
-Wallet.removeZephy(amount);
-}
+bool Player::Bust() {
+    if (currentscore >= 17) {
+        return true;
+    } else {return false;
+        }
 }
 
-bool Player::Bust(){
-if(*currentScore <= 11 || *currentScore > 17){
-return true;
+double Player::getBalance() {
+    return Wallet.checkBalance();
 }
-else return false;
 
+
+void Player::getPayout() {
+    currentbet = Pay.calculatePayout(currentscore, currentbet);
+
+    if (currentbet > 0) {
+        Wallet.addZephy(currentbet);
+    }
+    std::cout << "Your new balance is $" << Wallet.checkBalance() << "\n";
 }

@@ -1,0 +1,17 @@
+Reyzak is a casino game that utilizes two spinners, producing random numbers
+from the ranges 2 to 5 and 0 to 7. 
+Each player starts with 50 zephy of the Rigel-7 Zephy currency
+The goal of Reyzak is to get as close as possible to 17 without going over.
+After placing a bet, players must choose one of the spinners.
+A player can spin as many times as they'd like before reaching 17.
+If a player opts not to spin or reaches 17 the game pays out according 
+to the chart listed below
+
+<11      0% 
+>17	 0%
+12	 25%	
+13	 50%	
+14	 100%	
+15	 125%	
+16	 150%	
+17	 200%	
